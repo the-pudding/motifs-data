@@ -1,11 +1,23 @@
 <script>
-	import { getContext } from "svelte";
-	import Footer from "$components/Footer.svelte";
+	import Audio from "$components/Audio.svelte";
 
-	// const copy = getContext("copy");
-	// const data = getContext("data");
+	let selectedTrack = $state(null);
 </script>
 
-<svelte:boundary onerror={(e) => console.error(e)}>
-	<!-- <Footer recirc={true} /> -->
-</svelte:boundary>
+<main>
+	<Audio bind:selectedTrack />
+
+	<div class="motifs">
+		<h2>Motifs</h2>
+	</div>
+</main>
+
+<style>
+	main {
+		height: 100svh;
+		display: flex;
+		gap: 1rem;
+		padding: 4rem;
+		padding-bottom: 2rem;
+	}
+</style>

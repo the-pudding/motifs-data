@@ -6,7 +6,9 @@
 /* colors defined in variables.css */
 :root {
 	/* font */
-	--sans: "Atlas Grotesk", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+	--sans:
+		"Atlas Grotesk", -apple-system, BlinkMacSystemFont, Helvetica, Arial,
+		sans-serif;
 	--serif: "Tiempos Text", Iowan Old Style, Times New Roman, Times, serif;
 	--mono: Menlo, Consolas, Monaco, monospace;
 
@@ -18,10 +20,10 @@
 
 	/* presets (used in reset.css) */
 	--border-radius: 2px;
-	--font-body: var(--serif);
-	--font-form: var(--sans);
-	--color-bg: var(--color-white);
-	--color-fg: var(--color-gray-900);
+	--font-body: var(--mono);
+	--font-form: var(--mono);
+	--color-bg: var(--color-gray-900);
+	--color-fg: var(--color-white);
 	--color-primary: var(--color-black);
 	--color-link: var(--color-black);
 	--color-link-hover: var(--color-black);
@@ -51,6 +53,10 @@
 	:root {
 		--1s: 1s;
 	}
+}
+
+body {
+	background: var(--color-bg);
 }
 
 h1 {
