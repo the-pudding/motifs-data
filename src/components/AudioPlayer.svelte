@@ -1,8 +1,9 @@
 <script>
+	import { onMount } from "svelte";
 	import WaveSurfer from "wavesurfer.js";
 	import RegionsPlugin from "wavesurfer.js/dist/plugins/regions.esm.js";
 
-	const { src, name } = $props();
+	const { src, name, motifs = $bindable() } = $props();
 
 	const waveColor = "#CCBB44";
 	const progressColor = "#EE6677";
@@ -12,20 +13,19 @@
 	let container;
 	let wavesurfer;
 	let marking = $state(false);
-	let regionStart = $state(null);
-	let fullRegion = $state(null);
+	let regions = $state();
+	let regionStart = $state();
 	let selectedRegion = $state(null);
-	let regions = $state(RegionsPlugin.create());
+	let selectedMotif = $state();
+	let inputValue = $state("");
 
 	const togglePlay = (e) => {
-		if (e) e.stopPropagation();
 		if (wavesurfer) {
 			wavesurfer.playPause();
 		}
 	};
 
 	const regionPlay = (e) => {
-		e.stopPropagation();
 		if (selectedRegion) {
 			wavesurfer.play(selectedRegion.start, selectedRegion.end);
 			wavesurfer.once("finish", () => {
@@ -35,44 +35,88 @@
 	};
 
 	const regionDelete = (e) => {
-		e.stopPropagation();
 		if (selectedRegion) {
 			selectedRegion.remove();
 			selectedRegion = null;
 		}
 	};
 
-	const getRegionEl = (id) => {
+	const getRegionEl = async (id, timeout = 2000) => {
 		const shadowHost = container.querySelector(".wavesurfer-host");
 		const shadowRoot = shadowHost?.shadowRoot;
-		return Array.from(shadowRoot?.querySelectorAll("*")).find(
-			(el) =>
-				el.getAttribute?.("part") &&
-				el.getAttribute("part").split(" ").includes(id)
-		);
+
+		if (!shadowRoot) {
+			console.warn("❌ No shadowRoot found");
+			return null;
+		}
+
+		const findEl = () =>
+			Array.from(shadowRoot.querySelectorAll("*")).find((el) => {
+				const part = el.getAttribute?.("part");
+				return part?.split(" ").includes(id);
+			});
+
+		// Check if it's already rendered
+		const existing = findEl();
+		if (existing) return existing;
+
+		// Otherwise, wait for it
+		return new Promise((resolve, reject) => {
+			const observer = new MutationObserver(() => {
+				const match = findEl();
+				if (match) {
+					observer.disconnect();
+					resolve(match);
+				}
+			});
+
+			observer.observe(shadowRoot, { childList: true, subtree: true });
+
+			setTimeout(() => {
+				observer.disconnect();
+				reject(
+					new Error(`Region element with id "${id}" not found in ${timeout}ms`)
+				);
+			}, timeout);
+		});
 	};
 
 	const onWindowClick = (e) => {
-		if (!selectedRegion) return;
-		const regionEl = getRegionEl(selectedRegion.id);
-		if (regionEl) regionEl.style.background = regionColor;
+		const clickableTags = [
+			"SELECT",
+			"BUTTON",
+			"A",
+			"INPUT",
+			"TEXTAREA",
+			"LABEL"
+		];
+
+		if (
+			clickableTags.includes(e.target.tagName) ||
+			e.target.closest(
+				'[role="button"], [role="menuitem"], .ignore-outside-click'
+			)
+		)
+			return;
+
 		selectedRegion = null;
 	};
 
 	const onRegionClick = (e, id) => {
 		e.stopPropagation();
-
-		if (selectedRegion) {
-			const oldRegionEl = getRegionEl(selectedRegion.id);
-			if (oldRegionEl) oldRegionEl.style.background = regionColor;
-		}
-
-		const newRegionEl = getRegionEl(id);
-		if (newRegionEl) newRegionEl.style.background = regionHighlightColor;
 		selectedRegion = regions.regions.find((d) => d.id === id);
 	};
 
 	const onKeyDown = (e) => {
+		const tag = document.activeElement.tagName;
+		const isTyping =
+			tag === "INPUT" ||
+			tag === "TEXTAREA" ||
+			document.activeElement.isContentEditable;
+		if (isTyping) return;
+
+		e.preventDefault();
+
 		if (e.key === " ") {
 			togglePlay();
 		} else if (e.key === "m") {
@@ -91,15 +135,14 @@
 
 				const end = wavesurfer.getCurrentTime();
 				if (end > regionStart.start) {
-					fullRegion = regions.addRegion({
+					const r = regions.addRegion({
 						start: regionStart.start,
 						end,
 						color: regionColor,
 						drag: true,
 						resize: true
 					});
-
-					const r = fullRegion;
+					selectedRegion = r;
 					r.on("click", (e) => onRegionClick(e, r.id));
 				}
 
@@ -113,7 +156,78 @@
 		}
 	};
 
-	$effect(() => {
+	const addMotif = () => {
+		if (inputValue.trim() === "") return;
+
+		const motifName = inputValue.trim();
+		const newMotif = {
+			name: motifName,
+			emoji: "🎵",
+			regions: [
+				{
+					"track-name": name,
+					start: selectedRegion.start,
+					end: selectedRegion.end
+				}
+			]
+		};
+		motifs.push(newMotif);
+		selectedMotif = motifName;
+		inputValue = "";
+	};
+
+	const loadExistingRegions = () => {
+		wavesurfer.once("ready", () => {
+			regions.clearRegions();
+
+			motifs.forEach((motif) => {
+				motif.regions?.forEach((region) => {
+					if (region["track-name"] === name) {
+						const r = regions.addRegion({
+							start: +region.start,
+							end: +region.end,
+							content: `${motif.emoji} ${motif.name}`,
+							color: regionColor,
+							drag: true,
+							resize: true
+						});
+						r.on("click", (e) => onRegionClick(e, r.id));
+					}
+				});
+			});
+		});
+	};
+
+	const updateSrc = () => {
+		if (wavesurfer) {
+			wavesurfer.load(src);
+			loadExistingRegions();
+		}
+	};
+
+	const regionSelectionChange = async () => {
+		if (!regions) return;
+
+		const allRegions = regions.regions;
+
+		for (const r of allRegions) {
+			const regionEl = await getRegionEl(r.id);
+			if (regionEl) {
+				if (selectedRegion && r.id === selectedRegion.id) {
+					regionEl.style.background = regionHighlightColor;
+				} else {
+					regionEl.style.background = regionColor;
+				}
+			}
+		}
+	};
+
+	$effect(() => updateSrc(src));
+	$effect(() => regionSelectionChange(selectedRegion));
+
+	onMount(() => {
+		regions = RegionsPlugin.create();
+
 		wavesurfer = WaveSurfer.create({
 			container,
 			waveColor: waveColor,
@@ -133,6 +247,7 @@
 		}, 0);
 
 		wavesurfer.load(src);
+		loadExistingRegions();
 
 		return () => {
 			if (wavesurfer) wavesurfer.destroy();
@@ -140,7 +255,7 @@
 	});
 </script>
 
-<svelte:window on:keydown|preventDefault={onKeyDown} onclick={onWindowClick} />
+<svelte:window on:keydown={onKeyDown} onclick={onWindowClick} />
 
 <div class="player">
 	<h2>{name}</h2>
@@ -154,7 +269,21 @@
 				<span>Region</span>
 				<button onclick={regionPlay}>Play</button>
 				<button onclick={regionDelete}>Delete</button>
-				<button onclick={regionRename}>Name</button>
+				<select bind:value={selectedMotif}>
+					<option disabled selected value="-1">Select a motif</option>
+					{#each motifs as motif}
+						<option value={motif.name}>{motif.name}</option>
+					{/each}
+					<option value={"new"}>➕ Add new</option>
+				</select>
+				{#if selectedMotif === "new"}
+					<input
+						bind:value={inputValue}
+						type="text"
+						placeholder="New motif name"
+					/>
+					<button onclick={addMotif}>Save</button>
+				{/if}
 			</div>
 		{/if}
 	</div>
@@ -171,6 +300,15 @@
 		gap: 2rem;
 	}
 
-	:global(.wavesurfer-host::part(region)) {
+	.region-controls {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	:global(.wavesurfer-host::part(region-content)) {
+		margin-top: 0;
+		font-size: 12px;
 	}
 </style>

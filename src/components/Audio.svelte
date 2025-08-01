@@ -2,14 +2,20 @@
 	import AudioPlayer from "$components/AudioPlayer.svelte";
 	import tracks from "$data/tracks.json";
 
-	let { selectedTrack = $bindable() } = $props();
+	let { motifs = $bindable() } = $props();
+
+	let selectedTrack = $state(tracks[0]);
 </script>
 
 <div class="audio">
 	<h2>Les Misérables</h2>
 
 	{#if selectedTrack}
-		<AudioPlayer name={selectedTrack.name} src={selectedTrack.file} />
+		<AudioPlayer
+			name={selectedTrack.name}
+			src={selectedTrack.file}
+			bind:motifs
+		/>
 	{/if}
 
 	<ol>
@@ -30,6 +36,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		flex: 3;
 	}
 
 	ol {

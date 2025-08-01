@@ -1,0 +1,29 @@
+[
+	{
+		"name": "placeholder",
+		"emoji": "🤘🏽",
+		"regions": [
+			{
+				"track-name": "01 Overture-Work Song",
+				"start": 0,
+				"end": 10
+			},
+			{
+				"track-name": "04 At the End of the Day",
+				"start": 10,
+				"end": 20
+			}
+		]
+	},
+	{
+		"name": "harumph",
+		"emoji": "🎵",
+		"regions": [
+			{
+				"track-name": "01 Overture-Work Song",
+				"start": 33.247015,
+				"end": 42.49937000987513
+			}
+		]
+	}
+]
