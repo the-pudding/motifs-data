@@ -8,9 +8,11 @@ const __dirname = path.dirname(__filename);
 
 const outputPath = path.join(
 	__dirname,
-	"..",
-	"..",
-	"..",
+	"..", // api
+	"..", // routes
+	"..", // src
+	"..", // root
+	"static", // <-- static folder
 	"data",
 	"motifs.json"
 );

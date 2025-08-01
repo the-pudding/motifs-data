@@ -52,6 +52,32 @@
 			}
 			await save();
 		});
+		r.on("content-changed", async () => {
+			const oldMotif = motifs.find((m) =>
+				m.regions.some((region) => region.id === r.id)
+			);
+			const oldTrackName = oldMotif.regions.find(
+				(region) => region.id === r.id
+			)["track-name"];
+			oldMotif.regions = oldMotif.regions.filter(
+				(region) => region.id !== r.id
+			);
+
+			const newMotif = motifs.find(
+				(m) => `${m.emoji} ${m.name}` === selectedMotif
+			);
+			newMotif.regions = [
+				...newMotif.regions,
+				{
+					id: r.id,
+					"track-name": oldTrackName,
+					start: r.start,
+					end: r.end
+				}
+			];
+
+			await save();
+		});
 
 		return r;
 	};
@@ -192,6 +218,10 @@
 		}
 	};
 
+	$effect(() => {
+		console.log("🔁 AudioPlayer running");
+	});
+
 	const save = async () => {
 		const res = await fetch("/api/save-motifs", {
 			method: "POST",
@@ -207,7 +237,7 @@
 		}
 	};
 
-	const addMotif = async () => {
+	const createMotif = async () => {
 		if (inputNewMotifName.trim() === "" || inputNewMotifEmoji.trim() === "") {
 			inputErrorMessage = "Enter a name and an emoji.";
 			return;
@@ -230,7 +260,7 @@
 		};
 
 		motifs.push(newMotif);
-		motifs = motifs;
+		// motifs = motifs;
 		selectedMotif = motifName;
 		inputNewMotifName = "";
 		inputNewMotifEmoji = "";
@@ -258,14 +288,13 @@
 	};
 
 	const updateSrc = () => {
-		if (wavesurfer) {
-			wavesurfer.load(src);
-			loadExistingRegions();
-		}
+		if (!wavesurfer) return;
+		wavesurfer.load(src);
+		loadExistingRegions();
 	};
 
 	const regionSelectionChange = async () => {
-		if (!regions) return;
+		if (!wavesurfer || !regions) return;
 
 		const allRegions = regions.regions;
 
@@ -281,8 +310,17 @@
 		}
 	};
 
+	const motifSelectedChange = () => {
+		if (!wavesurfer || !selectedRegion || !selectedMotif) return;
+
+		if (selectedRegion.content.innerHTML !== selectedMotif) {
+			selectedRegion.setContent(selectedMotif);
+		}
+	};
+
 	$effect(() => updateSrc(src));
 	$effect(() => regionSelectionChange(selectedRegion));
+	$effect(() => motifSelectedChange(selectedMotif));
 
 	onMount(() => {
 		regions = RegionsPlugin.create();
@@ -330,12 +368,15 @@
 				<button onclick={playRegion}>Play</button>
 				<button onclick={deleteRegion}>Delete</button>
 				<select bind:value={selectedMotif}>
-					<option disabled selected value="-1">Select a motif</option>
+					<option disabled selected value={undefined}>Select a motif</option>
 					{#each motifs as motif}
-						<option value={motif.name}>{motif.name}</option>
+						<option value={`${motif.emoji} ${motif.name}`}
+							>{`${motif.emoji} ${motif.name}`}</option
+						>
 					{/each}
 					<option value={"new"}>➕ Add new</option>
 				</select>
+
 				{#if selectedMotif === "new"}
 					<div class="inputs">
 						<input
@@ -348,7 +389,7 @@
 							type="text"
 							placeholder="Emoji"
 						/>
-						<button onclick={addMotif}>Save</button>
+						<button onclick={createMotif}>Save</button>
 						{#if inputErrorMessage}
 							<span class="error">{inputErrorMessage}</span>
 						{/if}

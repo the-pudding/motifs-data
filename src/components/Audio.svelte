@@ -4,10 +4,6 @@
 	import { onMount } from "svelte";
 
 	let { motifs = $bindable(), selectedTrack = $bindable() } = $props();
-
-	onMount(() => {
-		console.log("audio onmount");
-	});
 </script>
 
 <div class="audio">
