@@ -3,7 +3,7 @@
 	import WaveSurfer from "wavesurfer.js";
 	import RegionsPlugin from "wavesurfer.js/dist/plugins/regions.esm.js";
 
-	const { src, name, motifs = $bindable() } = $props();
+	let { src, name, motifs = $bindable() } = $props();
 
 	const waveColor = "#CCBB44";
 	const progressColor = "#EE6677";
@@ -13,11 +13,14 @@
 	let container;
 	let wavesurfer;
 	let marking = $state(false);
+	let destroying = $state(false);
 	let regions = $state();
 	let regionStart = $state();
 	let selectedRegion = $state(null);
 	let selectedMotif = $state();
-	let inputValue = $state("");
+	let inputNewMotifName = $state("");
+	let inputNewMotifEmoji = $state("");
+	let inputErrorMessage = $state("");
 
 	const togglePlay = (e) => {
 		if (wavesurfer) {
@@ -25,7 +28,35 @@
 		}
 	};
 
-	const regionPlay = (e) => {
+	const createRegion = ({ id = "", start, end, content = "" }) => {
+		const r = regions.addRegion({
+			id,
+			start,
+			end,
+			content,
+			color: regionColor,
+			drag: true,
+			resize: true
+		});
+		r.on("click", (e) => onRegionClick(e, r.id));
+		r.on("update-end", async () => {
+			if (!r.content) return;
+
+			for (const motif of motifs) {
+				for (const region of motif.regions ?? []) {
+					if (region.id === r.id) {
+						region.start = r.start;
+						region.end = r.end;
+					}
+				}
+			}
+			await save();
+		});
+
+		return r;
+	};
+
+	const playRegion = (e) => {
 		if (selectedRegion) {
 			wavesurfer.play(selectedRegion.start, selectedRegion.end);
 			wavesurfer.once("finish", () => {
@@ -34,11 +65,20 @@
 		}
 	};
 
-	const regionDelete = (e) => {
-		if (selectedRegion) {
-			selectedRegion.remove();
-			selectedRegion = null;
+	const deleteRegion = async (e) => {
+		if (!selectedRegion) return;
+
+		if (selectedRegion.content) {
+			for (const motif of motifs) {
+				motif.regions = motif.regions?.filter(
+					(region) => region.id !== selectedRegion.id
+				);
+			}
+			await save();
 		}
+
+		selectedRegion.remove();
+		selectedRegion = null;
 	};
 
 	const getRegionEl = async (id, timeout = 2000) => {
@@ -135,15 +175,11 @@
 
 				const end = wavesurfer.getCurrentTime();
 				if (end > regionStart.start) {
-					const r = regions.addRegion({
+					const r = createRegion({
 						start: regionStart.start,
-						end,
-						color: regionColor,
-						drag: true,
-						resize: true
+						end
 					});
 					selectedRegion = r;
-					r.on("click", (e) => onRegionClick(e, r.id));
 				}
 
 				regionStart.remove();
@@ -156,24 +192,50 @@
 		}
 	};
 
-	const addMotif = () => {
-		if (inputValue.trim() === "") return;
+	const save = async () => {
+		const res = await fetch("/api/save-motifs", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(motifs)
+		});
 
-		const motifName = inputValue.trim();
+		const data = await res.json();
+		if (data.success) {
+			console.log("✅ Motifs saved!");
+		} else {
+			console.error("❌ Failed to save motifs:", data.error);
+		}
+	};
+
+	const addMotif = async () => {
+		if (inputNewMotifName.trim() === "" || inputNewMotifEmoji.trim() === "") {
+			inputErrorMessage = "Enter a name and an emoji.";
+			return;
+		}
+
+		inputErrorMessage = "";
+		const motifName = inputNewMotifName.trim();
+		const motifEmoji = inputNewMotifEmoji.trim() || "🎵";
 		const newMotif = {
 			name: motifName,
-			emoji: "🎵",
+			emoji: motifEmoji,
 			regions: [
 				{
+					id: selectedRegion.id,
 					"track-name": name,
 					start: selectedRegion.start,
 					end: selectedRegion.end
 				}
 			]
 		};
+
 		motifs.push(newMotif);
+		motifs = motifs;
 		selectedMotif = motifName;
-		inputValue = "";
+		inputNewMotifName = "";
+		inputNewMotifEmoji = "";
+
+		await save();
 	};
 
 	const loadExistingRegions = () => {
@@ -183,15 +245,12 @@
 			motifs.forEach((motif) => {
 				motif.regions?.forEach((region) => {
 					if (region["track-name"] === name) {
-						const r = regions.addRegion({
+						createRegion({
+							id: region.id,
 							start: +region.start,
 							end: +region.end,
-							content: `${motif.emoji} ${motif.name}`,
-							color: regionColor,
-							drag: true,
-							resize: true
+							content: `${motif.emoji} ${motif.name}`
 						});
-						r.on("click", (e) => onRegionClick(e, r.id));
 					}
 				});
 			});
@@ -250,6 +309,7 @@
 		loadExistingRegions();
 
 		return () => {
+			destroying = true;
 			if (wavesurfer) wavesurfer.destroy();
 		};
 	});
@@ -267,8 +327,8 @@
 		{#if selectedRegion}
 			<div class="region-controls">
 				<span>Region</span>
-				<button onclick={regionPlay}>Play</button>
-				<button onclick={regionDelete}>Delete</button>
+				<button onclick={playRegion}>Play</button>
+				<button onclick={deleteRegion}>Delete</button>
 				<select bind:value={selectedMotif}>
 					<option disabled selected value="-1">Select a motif</option>
 					{#each motifs as motif}
@@ -277,12 +337,22 @@
 					<option value={"new"}>➕ Add new</option>
 				</select>
 				{#if selectedMotif === "new"}
-					<input
-						bind:value={inputValue}
-						type="text"
-						placeholder="New motif name"
-					/>
-					<button onclick={addMotif}>Save</button>
+					<div class="inputs">
+						<input
+							bind:value={inputNewMotifName}
+							type="text"
+							placeholder="New motif name"
+						/>
+						<input
+							bind:value={inputNewMotifEmoji}
+							type="text"
+							placeholder="Emoji"
+						/>
+						<button onclick={addMotif}>Save</button>
+						{#if inputErrorMessage}
+							<span class="error">{inputErrorMessage}</span>
+						{/if}
+					</div>
 				{/if}
 			</div>
 		{/if}
@@ -305,6 +375,14 @@
 		align-items: center;
 		gap: 0.5rem;
 		flex-wrap: wrap;
+	}
+
+	.inputs input:nth-of-type(2) {
+		width: 65px;
+	}
+
+	.error {
+		color: red;
 	}
 
 	:global(.wavesurfer-host::part(region-content)) {

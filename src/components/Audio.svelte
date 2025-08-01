@@ -1,10 +1,13 @@
 <script>
 	import AudioPlayer from "$components/AudioPlayer.svelte";
 	import tracks from "$data/tracks.json";
+	import { onMount } from "svelte";
 
-	let { motifs = $bindable() } = $props();
+	let { motifs = $bindable(), selectedTrack = $bindable() } = $props();
 
-	let selectedTrack = $state(tracks[0]);
+	onMount(() => {
+		console.log("audio onmount");
+	});
 </script>
 
 <div class="audio">

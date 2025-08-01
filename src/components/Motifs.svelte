@@ -1,35 +1,28 @@
 <script>
 	let { motifs = $bindable() } = $props();
-
-	const save = async () => {
-		const res = await fetch("/api/save-motifs", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(motifs)
-		});
-
-		const data = await res.json();
-		// TODO: show this on the screen
-		// TODO: automatic save on change?
-		if (data.success) {
-			console.log("✅ Motifs saved!");
-		} else {
-			console.error("❌ Failed to save motifs:", data.error);
-		}
-	};
 </script>
 
 <div class="motifs">
 	<div class="title">
 		<h2>Motifs</h2>
-		<button onclick={save}>Save 💾</button>
 	</div>
 
 	{#if motifs && motifs.length > 0}
 		<ul>
-			{#each motifs as motif}
+			{#each motifs.filter((m) => m.regions.length > 0) as motif}
 				<li>
-					<h3>{motif.emoji} {motif.name}</h3>
+					<div class="name">{motif.emoji} {motif.name}</div>
+					<div class="regions">
+						{#each motif.regions as region}
+							<div class="region">
+								<span
+									>{region["track-name"]} ({(region.end - region.start).toFixed(
+										0
+									)}s)</span
+								>
+							</div>
+						{/each}
+					</div>
 				</li>
 			{/each}
 		</ul>
@@ -48,7 +41,36 @@
 	ul {
 		list-style: none;
 		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
+
+	li {
+		border-radius: 5px;
+		padding: 0.5rem;
+		border: var(--color-gray-400) 1px solid;
+	}
+
+	.name {
+		font-size: 20px;
+		white-space: nowrap;
+		margin-bottom: 0.5rem;
+	}
+
+	.regions {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.region {
+		color: var(--color-gray-300);
+		font-size: 14px;
+		border-radius: 5px;
+		border: var(--color-gray-600) 1px solid;
+		padding: 0.25rem;
+	}
+
 	.motifs {
 		flex: 1;
 	}
