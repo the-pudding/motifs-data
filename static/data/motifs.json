@@ -13,7 +13,7 @@
         "id": "region-h2b93opper4",
         "track-name": "04 At the End of the Day",
         "start": 78.02977789824445,
-        "end": 112.72412785139018
+        "end": 105.97391299621546
       }
     ]
   },
@@ -26,6 +26,12 @@
         "track-name": "01 Overture-Work Song",
         "start": 23.859463390700597,
         "end": 49.785060599924414
+      },
+      {
+        "id": "region-r5mk5557d1",
+        "track-name": "01 Overture-Work Song",
+        "start": 153.760573,
+        "end": 156.309852
       }
     ]
   },
@@ -38,6 +44,12 @@
         "track-name": "01 Overture-Work Song",
         "start": 85.68380758874994,
         "end": 116.18306479104461
+      },
+      {
+        "id": "region-fkdk2m5bigk",
+        "track-name": "01 Overture-Work Song",
+        "start": 131.901143,
+        "end": 136.090468
       }
     ]
   }

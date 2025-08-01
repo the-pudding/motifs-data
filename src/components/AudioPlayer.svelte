@@ -53,28 +53,39 @@
 			await save();
 		});
 		r.on("content-changed", async () => {
+			if (!selectedMotif) return;
+
 			const oldMotif = motifs.find((m) =>
 				m.regions.some((region) => region.id === r.id)
 			);
-			const oldTrackName = oldMotif.regions.find(
-				(region) => region.id === r.id
-			)["track-name"];
-			oldMotif.regions = oldMotif.regions.filter(
-				(region) => region.id !== r.id
-			);
-
 			const newMotif = motifs.find(
 				(m) => `${m.emoji} ${m.name}` === selectedMotif
 			);
-			newMotif.regions = [
-				...newMotif.regions,
-				{
+
+			if (!oldMotif) {
+				newMotif.regions.push({
 					id: r.id,
-					"track-name": oldTrackName,
+					"track-name": name,
 					start: r.start,
 					end: r.end
-				}
-			];
+				});
+			} else {
+				const oldTrackName = oldMotif.regions.find(
+					(region) => region.id === r.id
+				)["track-name"];
+				oldMotif.regions = oldMotif.regions.filter(
+					(region) => region.id !== r.id
+				);
+				newMotif.regions = [
+					...newMotif.regions,
+					{
+						id: r.id,
+						"track-name": oldTrackName,
+						start: r.start,
+						end: r.end
+					}
+				];
+			}
 
 			await save();
 		});
@@ -218,10 +229,6 @@
 		}
 	};
 
-	$effect(() => {
-		console.log("🔁 AudioPlayer running");
-	});
-
 	const save = async () => {
 		const res = await fetch("/api/save-motifs", {
 			method: "POST",
@@ -260,7 +267,6 @@
 		};
 
 		motifs.push(newMotif);
-		// motifs = motifs;
 		selectedMotif = motifName;
 		inputNewMotifName = "";
 		inputNewMotifEmoji = "";
@@ -313,7 +319,10 @@
 	const motifSelectedChange = () => {
 		if (!wavesurfer || !selectedRegion || !selectedMotif) return;
 
-		if (selectedRegion.content.innerHTML !== selectedMotif) {
+		if (
+			!selectedRegion.content ||
+			selectedRegion.content.innerHTML !== selectedMotif
+		) {
 			selectedRegion.setContent(selectedMotif);
 		}
 	};
