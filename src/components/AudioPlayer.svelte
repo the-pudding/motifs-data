@@ -3,7 +3,12 @@
 	import WaveSurfer from "wavesurfer.js";
 	import RegionsPlugin from "wavesurfer.js/dist/plugins/regions.esm.js";
 
-	let { src, name, motifs = $bindable() } = $props();
+	let {
+		src,
+		name,
+		motifs = $bindable(),
+		savedMessage = $bindable()
+	} = $props();
 
 	const waveColor = "#CCBB44";
 	const progressColor = "#EE6677";
@@ -238,9 +243,13 @@
 
 		const data = await res.json();
 		if (data.success) {
-			console.log("✅ Motifs saved!");
+			savedMessage = "✅ Saved successfully!";
+			setTimeout(() => {
+				savedMessage = "";
+			}, 3000);
 		} else {
 			console.error("❌ Failed to save motifs:", data.error);
+			savedMessage = "❌ Failed to save motifs";
 		}
 	};
 

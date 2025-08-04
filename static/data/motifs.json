@@ -32,6 +32,12 @@
         "track-name": "01 Overture-Work Song",
         "start": 153.760573,
         "end": 156.309852
+      },
+      {
+        "id": "region-d09e0dsppo4",
+        "track-name": "02 Valjean Arrested-Valjean Forgiven",
+        "start": 12.65706906303972,
+        "end": 17.838662063039717
       }
     ]
   },
@@ -42,8 +48,8 @@
       {
         "id": "region-5fb26pr8l5o",
         "track-name": "01 Overture-Work Song",
-        "start": 85.68380758874994,
-        "end": 116.18306479104461
+        "start": 66.65086408842345,
+        "end": 97.15012129071812
       },
       {
         "id": "region-fkdk2m5bigk",

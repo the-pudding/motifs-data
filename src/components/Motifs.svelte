@@ -1,10 +1,11 @@
 <script>
-	let { motifs = $bindable() } = $props();
+	let { motifs = $bindable(), savedMessage } = $props();
 </script>
 
 <div class="motifs">
 	<div class="title">
 		<h2>Motifs</h2>
+		<span class:visible={savedMessage !== ""}>{savedMessage}</span>
 	</div>
 
 	{#if motifs && motifs.length > 0}
@@ -36,6 +37,16 @@
 		display: flex;
 		align-items: center;
 		gap: 1rem;
+	}
+
+	.title span {
+		font-size: 10px;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+
+	.title span.visible {
+		opacity: 1;
 	}
 
 	ul {

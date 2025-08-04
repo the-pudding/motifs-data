@@ -6,6 +6,7 @@
 
 	let motifs = $state([]);
 	let selectedTrack = $state(tracks[0]);
+	let savedMessage = $state("");
 
 	onMount(async () => {
 		const res = await fetch("/data/motifs.json");
@@ -14,8 +15,8 @@
 </script>
 
 <main>
-	<Audio bind:motifs bind:selectedTrack />
-	<Motifs bind:motifs />
+	<Audio bind:motifs bind:selectedTrack bind:savedMessage />
+	<Motifs bind:motifs {savedMessage} />
 </main>
 
 <style>

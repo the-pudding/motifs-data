@@ -3,7 +3,11 @@
 	import tracks from "$data/tracks.json";
 	import { onMount } from "svelte";
 
-	let { motifs = $bindable(), selectedTrack = $bindable() } = $props();
+	let {
+		motifs = $bindable(),
+		selectedTrack = $bindable(),
+		savedMessage = $bindable()
+	} = $props();
 </script>
 
 <div class="audio">
@@ -14,6 +18,7 @@
 			name={selectedTrack.name}
 			src={selectedTrack.file}
 			bind:motifs
+			bind:savedMessage
 		/>
 	{/if}
 
