@@ -1,61 +1,397 @@
 [
   {
-    "name": "placeholder",
-    "emoji": "🤘🏽",
+    "name": "tigers",
+    "emoji": "🐅",
     "regions": [
       {
-        "id": "region-7hucjm6h2d8",
-        "track-name": "01 Overture-Work Song",
-        "start": 0,
-        "end": 10
+        "id": "region-9a4cddmqjfc",
+        "track-name": "1-04 I Dreamed A Dream",
+        "start": 118.216178,
+        "end": 141.88852594855575
       },
       {
-        "id": "region-h2b93opper4",
-        "track-name": "04 At the End of the Day",
-        "start": 78.02977789824445,
-        "end": 105.97391299621546
+        "id": "region-jadib6r5lrs",
+        "track-name": "1-23 One Day More",
+        "start": 78.579872,
+        "end": 99.33465726749692
       }
     ]
   },
   {
-    "name": "harumph",
-    "emoji": "🎵",
+    "name": "look down",
+    "emoji": "⛓️",
     "regions": [
       {
-        "id": "region-dpb7k8ks03c",
-        "track-name": "01 Overture-Work Song",
-        "start": 23.859463390700597,
-        "end": 49.785060599924414
+        "id": "region-vg52bco2bik",
+        "track-name": "1-01 Prologue",
+        "start": 68.389574,
+        "end": 79.974144
       },
       {
-        "id": "region-r5mk5557d1",
-        "track-name": "01 Overture-Work Song",
-        "start": 153.760573,
-        "end": 156.309852
+        "id": "region-frjekro0pks",
+        "track-name": "1-01 Prologue",
+        "start": 80.033559,
+        "end": 91.356954
       },
       {
-        "id": "region-d09e0dsppo4",
-        "track-name": "02 Valjean Arrested-Valjean Forgiven",
-        "start": 12.65706906303972,
-        "end": 17.838662063039717
+        "id": "region-g9cjjmq6c08",
+        "track-name": "1-01 Prologue",
+        "start": 58.780725,
+        "end": 70.556496
+      },
+      {
+        "id": "region-90omrg99nqg",
+        "track-name": "1-01 Prologue",
+        "start": 91.735924,
+        "end": 103.242636
+      },
+      {
+        "id": "region-to7k97o9ctg",
+        "track-name": "1-01 Prologue",
+        "start": 105.892731,
+        "end": 117.308065
+      },
+      {
+        "id": "region-af8r53sakss",
+        "track-name": "1-01 Prologue",
+        "start": 131.921451,
+        "end": 143.062446
+      },
+      {
+        "id": "region-4dqi3inkm9k",
+        "track-name": "1-01 Prologue",
+        "start": 143.173901,
+        "end": 154.811865
+      },
+      {
+        "id": "region-n9tuv89v0h8",
+        "track-name": "1-01 Prologue",
+        "start": 214.955504,
+        "end": 226.581693
+      },
+      {
+        "id": "region-kblfctfp62c",
+        "track-name": "1-01 Prologue",
+        "start": 226.636835,
+        "end": 238.379667
       }
     ]
   },
   {
-    "name": "party",
-    "emoji": "🥳",
+    "name": "24601",
+    "emoji": "🥖",
     "regions": [
       {
-        "id": "region-5fb26pr8l5o",
-        "track-name": "01 Overture-Work Song",
-        "start": 66.65086408842345,
-        "end": 97.15012129071812
+        "id": "region-7tuu1fvrjmc",
+        "track-name": "1-01 Prologue",
+        "start": 154.96399,
+        "end": 193.222147
+      }
+    ]
+  },
+  {
+    "name": "sublime",
+    "emoji": "🕊️",
+    "regions": [
+      {
+        "id": "region-sl18p87lb8c",
+        "track-name": "1-01 Prologue",
+        "start": 262.065152,
+        "end": 294.697286
       },
       {
-        "id": "region-fkdk2m5bigk",
-        "track-name": "01 Overture-Work Song",
-        "start": 131.901143,
-        "end": 136.090468
+        "id": "region-9gigjbggn6",
+        "track-name": "1-09 Fantine_s Death (Come To Me)",
+        "start": 50.090273,
+        "end": 81.156039
+      },
+      {
+        "id": "region-ieg66ug9kss",
+        "track-name": "1-09 Fantine_s Death (Come To Me)",
+        "start": 81.575345,
+        "end": 111.820751
+      },
+      {
+        "id": "region-n3bhhhbacvk",
+        "track-name": "1-09 Fantine_s Death (Come To Me)",
+        "start": 138.319465,
+        "end": 164.194217
+      },
+      {
+        "id": "region-qcutpj9ndbc",
+        "track-name": "1-09 Fantine_s Death (Come To Me)",
+        "start": 165.21718,
+        "end": 200.04029
+      }
+    ]
+  },
+  {
+    "name": "recitation",
+    "emoji": "🗣️",
+    "regions": [
+      {
+        "id": "region-1fcon7h0f3s",
+        "track-name": "1-01 Prologue",
+        "start": 317.670896,
+        "end": 336.307076
+      },
+      {
+        "id": "region-5vieh8kpcm8",
+        "track-name": "1-01 Prologue",
+        "start": 370.415444,
+        "end": 390.527727
+      },
+      {
+        "id": "region-1h916hnjtvg",
+        "track-name": "1-05 Lovely Ladies",
+        "start": 32.814089,
+        "end": 59.467896
+      },
+      {
+        "id": "region-8h7t03flim8",
+        "track-name": "1-05 Lovely Ladies",
+        "start": 76.017538,
+        "end": 105.499417
+      },
+      {
+        "id": "region-n02pn5jefic",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 0.004990761335977534,
+        "end": 26.885115679172806
+      }
+    ]
+  },
+  {
+    "name": "jvj",
+    "emoji": "🌅",
+    "regions": [
+      {
+        "id": "region-nl4bmmus8bc",
+        "track-name": "1-01 Prologue",
+        "start": 337.8793578543098,
+        "end": 357.071954
+      },
+      {
+        "id": "region-pp0b4kqhcqo",
+        "track-name": "1-01 Prologue",
+        "start": 410.042112,
+        "end": 427.671693
+      },
+      {
+        "id": "region-7q1v1tflrfc",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 147.654677,
+        "end": 167.16826
+      }
+    ]
+  },
+  {
+    "name": "friendship",
+    "emoji": "🤝",
+    "regions": [
+      {
+        "id": "region-nf7d46hs3n4",
+        "track-name": "1-01 Prologue",
+        "start": 431.053973,
+        "end": 470.1497770092167
+      },
+      {
+        "id": "region-j1eq5ce2opc",
+        "track-name": "1-01 Prologue",
+        "start": 562.983362,
+        "end": 606.515036
+      }
+    ]
+  },
+  {
+    "name": "police",
+    "emoji": "🚔",
+    "regions": [
+      {
+        "id": "region-3kcmd3lj7u8",
+        "track-name": "1-01 Prologue",
+        "start": 515.602654,
+        "end": 532.050254
+      },
+      {
+        "id": "region-fjng4tkcog",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 75.664233,
+        "end": 92.317778
+      }
+    ]
+  },
+  {
+    "name": "police response",
+    "emoji": "🙅‍♂️",
+    "regions": [
+      {
+        "id": "region-404d7r1l4hk",
+        "track-name": "1-01 Prologue",
+        "start": 532.142259,
+        "end": 561.218744
+      },
+      {
+        "id": "region-8o2hdv8lnic",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 92.598456,
+        "end": 112.095217
+      },
+      {
+        "id": "region-8ijo15jae3o",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 112.334968,
+        "end": 137.392934
+      }
+    ]
+  },
+  {
+    "name": "reckoning",
+    "emoji": "🫨",
+    "regions": [
+      {
+        "id": "region-0fgsuhl6op",
+        "track-name": "1-02 Valjean_s Soliloquy (What Have I Done_)",
+        "start": 18.937603,
+        "end": 201.51214044969163
+      },
+      {
+        "id": "region-nntb83haq7c",
+        "track-name": "2-15 Javert_s Suicide",
+        "start": 60.180886,
+        "end": 244.3747966315341
+      }
+    ]
+  },
+  {
+    "name": "lovely ladies",
+    "emoji": "👯‍♀️",
+    "regions": [
+      {
+        "id": "region-7oe3di6lsu",
+        "track-name": "1-05 Lovely Ladies",
+        "start": 3.150352,
+        "end": 17.50907
+      },
+      {
+        "id": "region-2ooop8poun",
+        "track-name": "1-05 Lovely Ladies",
+        "start": 17.671328,
+        "end": 31.92375
+      },
+      {
+        "id": "region-j8v7287qk1",
+        "track-name": "1-05 Lovely Ladies",
+        "start": 61.320454,
+        "end": 75.566023
+      },
+      {
+        "id": "region-22r5h8e4ctk",
+        "track-name": "1-05 Lovely Ladies",
+        "start": 107.080225,
+        "end": 121.492695
+      },
+      {
+        "id": "region-ungf3qao9v",
+        "track-name": "1-05 Lovely Ladies",
+        "start": 170.716952,
+        "end": 185.504312
+      },
+      {
+        "id": "region-not5guotrrg",
+        "track-name": "1-05 Lovely Ladies",
+        "start": 186.909595,
+        "end": 231.22771649235878
+      }
+    ]
+  },
+  {
+    "name": "eod (main)",
+    "emoji": "😠",
+    "regions": [
+      {
+        "id": "region-1snlvhnsa1c",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 28.096527,
+        "end": 49.4399982602619
+      },
+      {
+        "id": "region-2lfqmt9qk04",
+        "track-name": "1-03 At The End Of The Day",
+        "start": 155.40361,
+        "end": 179.572578
+      },
+      {
+        "id": "region-q81lb98r1ng",
+        "track-name": "1-03 At The End Of The Day",
+        "start": 229.864849,
+        "end": 243.101403
+      }
+    ]
+  },
+  {
+    "name": "eod (authority)",
+    "emoji": "🧐",
+    "regions": [
+      {
+        "id": "region-g26ijbh91tk",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 49.561624,
+        "end": 67.709264
+      },
+      {
+        "id": "region-hiroo2eune",
+        "track-name": "1-03 At The End Of The Day",
+        "start": 189.178685,
+        "end": 212.652742
+      }
+    ]
+  },
+  {
+    "name": "turned so cold",
+    "emoji": "🩵",
+    "regions": [
+      {
+        "id": "region-3qes4s9lt2g",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 169.763581,
+        "end": 190.06600109682586
+      },
+      {
+        "id": "region-tbf9hg7t9n",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 220.804053,
+        "end": 246.828218
+      },
+      {
+        "id": "region-3nh1oa4mr9s",
+        "track-name": "1-09 Fantine_s Death (Come To Me)",
+        "start": 25.186531,
+        "end": 50.34474
+      }
+    ]
+  },
+  {
+    "name": "sublime variation",
+    "emoji": "🕊️",
+    "regions": [
+      {
+        "id": "region-sqe7e45dji4",
+        "track-name": "1-01 Prologue",
+        "start": 238.235965,
+        "end": 261.710879
+      },
+      {
+        "id": "region-sqe7e45dji4",
+        "track-name": "1-01 Prologue",
+        "start": 238.235965,
+        "end": 261.710879
+      },
+      {
+        "id": "region-mmo9akimtl8",
+        "track-name": "1-09 Fantine_s Death (Come To Me)",
+        "start": 112.860743,
+        "end": 138.290754
       }
     ]
   }

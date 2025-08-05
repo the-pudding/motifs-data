@@ -1,18 +1,28 @@
 <script>
 	let { motifs = $bindable(), savedMessage } = $props();
+
+	let isOpen = $state(true);
+	let sortedMotifs = $derived(
+		[...motifs].sort((a, b) => (a.name < b.name ? -1 : 1))
+	);
 </script>
 
-<div class="motifs">
+<div class="motifs" class:collapsed={!isOpen}>
 	<div class="title">
-		<h2>Motifs</h2>
+		<h2>Motifs ({motifs.length})</h2>
 		<span class:visible={savedMessage !== ""}>{savedMessage}</span>
 	</div>
 
-	{#if motifs && motifs.length > 0}
+	<button onclick={() => (isOpen = !isOpen)}
+		>{isOpen ? "Collapse" : "Open"}</button
+	>
+
+	{#if sortedMotifs && sortedMotifs.length > 0}
 		<ul>
-			{#each motifs.filter((m) => m.regions.length > 0) as motif}
+			{#each sortedMotifs.filter((m) => m.regions.length > 0) as motif}
+				{@const numOccurences = motif.regions.length}
 				<li>
-					<div class="name">{motif.emoji} {motif.name}</div>
+					<div class="name">{motif.emoji} {motif.name} ({numOccurences})</div>
 					<div class="regions">
 						{#each motif.regions as region}
 							<div class="region">
@@ -33,14 +43,31 @@
 </div>
 
 <style>
+	.motifs {
+		width: 400px;
+		height: 100%;
+	}
+
+	.collapsed {
+		width: auto;
+	}
+
+	.collapsed h2 {
+		font-size: 16px;
+	}
+
 	.title {
 		display: flex;
 		align-items: center;
 		gap: 1rem;
+		position: relative;
 	}
 
 	.title span {
 		font-size: 10px;
+		position: absolute;
+		top: 0;
+		transform: translate(0, -100%);
 		opacity: 0;
 		transition: opacity 0.3s ease-in-out;
 	}
@@ -55,6 +82,13 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		overflow: scroll;
+		height: 100%;
+		margin-top: 1rem;
+	}
+
+	.collapsed ul {
+		display: none;
 	}
 
 	li {
@@ -72,6 +106,7 @@
 	.regions {
 		display: flex;
 		gap: 0.5rem;
+		overflow: scroll;
 	}
 
 	.region {
@@ -80,9 +115,5 @@
 		border-radius: 5px;
 		border: var(--color-gray-600) 1px solid;
 		padding: 0.25rem;
-	}
-
-	.motifs {
-		flex: 1;
 	}
 </style>

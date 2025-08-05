@@ -17,6 +17,7 @@
 
 	let container;
 	let wavesurfer;
+	let timestamp = $state(0);
 	let marking = $state(false);
 	let destroying = $state(false);
 	let regions = $state();
@@ -26,6 +27,15 @@
 	let inputNewMotifName = $state("");
 	let inputNewMotifEmoji = $state("");
 	let inputErrorMessage = $state("");
+
+	let timestampFormatted = $derived.by(() => {
+		const minutes = Math.floor(timestamp / 60);
+		const seconds = Math.floor(timestamp % 60);
+		return `${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+	});
+	let sortedMotifs = $derived(
+		[...motifs].sort((a, b) => (a.name < b.name ? -1 : 1))
+	);
 
 	const togglePlay = (e) => {
 		if (wavesurfer) {
@@ -67,14 +77,14 @@
 				(m) => `${m.emoji} ${m.name}` === selectedMotif
 			);
 
-			if (!oldMotif) {
+			if (newMotif && !oldMotif) {
 				newMotif.regions.push({
 					id: r.id,
 					"track-name": name,
 					start: r.start,
 					end: r.end
 				});
-			} else {
+			} else if (oldMotif && newMotif) {
 				const oldTrackName = oldMotif.regions.find(
 					(region) => region.id === r.id
 				)["track-name"];
@@ -276,7 +286,7 @@
 		};
 
 		motifs.push(newMotif);
-		selectedMotif = motifName;
+		selectedMotif = `${motifEmoji} ${motifName}`;
 		inputNewMotifName = "";
 		inputNewMotifEmoji = "";
 
@@ -305,12 +315,14 @@
 	const updateSrc = () => {
 		if (!wavesurfer) return;
 		wavesurfer.load(src);
+		wavesurfer.seekTo(0);
 		loadExistingRegions();
 	};
 
 	const regionSelectionChange = async () => {
 		if (!wavesurfer || !regions) return;
 
+		selectedMotif = undefined;
 		const allRegions = regions.regions;
 
 		for (const r of allRegions) {
@@ -323,10 +335,25 @@
 				}
 			}
 		}
+
+		if (selectedRegion) {
+			const currentMotif = motifs.find((m) =>
+				m.regions.some((region) => region.id === selectedRegion.id)
+			);
+
+			if (currentMotif)
+				selectedMotif = `${currentMotif.emoji} ${currentMotif.name}`;
+		}
 	};
 
 	const motifSelectedChange = () => {
-		if (!wavesurfer || !selectedRegion || !selectedMotif) return;
+		if (
+			!wavesurfer ||
+			!selectedRegion ||
+			!selectedMotif ||
+			selectedMotif === "new"
+		)
+			return;
 
 		if (
 			!selectedRegion.content ||
@@ -364,6 +391,12 @@
 		wavesurfer.load(src);
 		loadExistingRegions();
 
+		wavesurfer.on("audioprocess", () => {
+			if (wavesurfer.isPlaying()) {
+				timestamp = wavesurfer.getCurrentTime();
+			}
+		});
+
 		return () => {
 			destroying = true;
 			if (wavesurfer) wavesurfer.destroy();
@@ -378,6 +411,7 @@
 	<div class="waveform" bind:this={container}></div>
 
 	<div class="controls">
+		<span class="timestamp">{timestampFormatted}</span>
 		<button onclick={togglePlay}>Play / Pause</button>
 
 		{#if selectedRegion}
@@ -387,7 +421,7 @@
 				<button onclick={deleteRegion}>Delete</button>
 				<select bind:value={selectedMotif}>
 					<option disabled selected value={undefined}>Select a motif</option>
-					{#each motifs as motif}
+					{#each sortedMotifs as motif}
 						<option value={`${motif.emoji} ${motif.name}`}
 							>{`${motif.emoji} ${motif.name}`}</option
 						>
@@ -427,6 +461,7 @@
 	.controls {
 		display: flex;
 		gap: 2rem;
+		align-items: center;
 	}
 
 	.region-controls {

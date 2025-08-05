@@ -5,5 +5,5 @@
 		"module": "ESNext",
 		"target": "ESNext"
 	},
-	"include": ["src/**/*", "static/data/motifs.json"]
+	"include": ["src/**/*", "static/data/motifs-broadway.json"]
 }

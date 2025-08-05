@@ -5,7 +5,14 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const audioDir = path.join(__dirname, "..", "static", "assets", "audio");
+const audioDir = path.join(
+	__dirname,
+	"..",
+	"static",
+	"assets",
+	"audio",
+	"full"
+);
 const outputFile = path.join(__dirname, "..", "src", "data", "tracks.json");
 
 fs.readdir(audioDir, (err, files) => {
@@ -17,7 +24,7 @@ fs.readdir(audioDir, (err, files) => {
 	const audioFiles = files.filter((file) => file.endsWith(".mp3"));
 	const tracks = audioFiles.map((file) => ({
 		name: path.basename(file, ".mp3"),
-		file: `/assets/audio/${file}`
+		file: `/assets/audio/full/${file}`
 	}));
 
 	console.log(tracks);
