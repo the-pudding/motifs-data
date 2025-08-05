@@ -14,6 +14,12 @@
         "track-name": "1-23 One Day More",
         "start": 78.579872,
         "end": 99.33465726749692
+      },
+      {
+        "id": "region-rq5daduvrjc",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 75.319103,
+        "end": 102.176937
       }
     ]
   },
@@ -74,6 +80,12 @@
         "track-name": "1-01 Prologue",
         "start": 226.636835,
         "end": 238.379667
+      },
+      {
+        "id": "region-5fk8k4bhk48",
+        "track-name": "1-10 The Confrontation",
+        "start": 2.327055,
+        "end": 14.253915
       }
     ]
   },
@@ -86,6 +98,12 @@
         "track-name": "1-01 Prologue",
         "start": 154.96399,
         "end": 193.222147
+      },
+      {
+        "id": "region-0qkq8mq4ap8",
+        "track-name": "1-10 The Confrontation",
+        "start": 14.201882,
+        "end": 52.673351
       }
     ]
   },
@@ -158,6 +176,36 @@
         "track-name": "1-06 Fantine_s Arrest",
         "start": 0.004990761335977534,
         "end": 26.885115679172806
+      },
+      {
+        "id": "region-dv1p2firjlg",
+        "track-name": "1-07 The Runaway Cart",
+        "start": 97.927914,
+        "end": 104.086726
+      },
+      {
+        "id": "region-pooajo3g06g",
+        "track-name": "1-07 The Runaway Cart",
+        "start": 111.587805,
+        "end": 138.871204
+      },
+      {
+        "id": "region-8lvsr1n4aqc",
+        "track-name": "1-11 Castle On A Cloud",
+        "start": 158.688612,
+        "end": 180.52088
+      },
+      {
+        "id": "region-fdsacluvtno",
+        "track-name": "1-11 Castle On A Cloud",
+        "start": 201.517182,
+        "end": 207.943184
+      },
+      {
+        "id": "region-jj3gbfg7cto",
+        "track-name": "1-11 Castle On A Cloud",
+        "start": 216.581137,
+        "end": 223.51229
       }
     ]
   },
@@ -182,6 +230,18 @@
         "track-name": "1-06 Fantine_s Arrest",
         "start": 147.654677,
         "end": 167.16826
+      },
+      {
+        "id": "region-btesnqa8a0s",
+        "track-name": "1-07 The Runaway Cart",
+        "start": 175.469988,
+        "end": 196.203804
+      },
+      {
+        "id": "region-pfktvnpa1tc",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 29.927037,
+        "end": 51.053296
       }
     ]
   },
@@ -204,7 +264,7 @@
     ]
   },
   {
-    "name": "police",
+    "name": "police 1",
     "emoji": "🚔",
     "regions": [
       {
@@ -218,30 +278,66 @@
         "track-name": "1-06 Fantine_s Arrest",
         "start": 75.664233,
         "end": 92.317778
+      },
+      {
+        "id": "region-6ejeubtbhao",
+        "track-name": "1-07 The Runaway Cart",
+        "start": 141.836857,
+        "end": 161.47187565089763
+      },
+      {
+        "id": "region-k59fin7bgok",
+        "track-name": "1-07 The Runaway Cart",
+        "start": 196.175027,
+        "end": 208.425879
+      },
+      {
+        "id": "region-1pmofcthhe8",
+        "track-name": "1-01 Prologue",
+        "start": 546.721728,
+        "end": 562.148662
+      },
+      {
+        "id": "region-go8dc43avv4",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 104.277685,
+        "end": 112.927154
+      },
+      {
+        "id": "region-armusodo9o8",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 126.671538,
+        "end": 138.077611
       }
     ]
   },
   {
-    "name": "police response",
-    "emoji": "🙅‍♂️",
+    "name": "police 2",
+    "emoji": "🚔",
     "regions": [
       {
         "id": "region-404d7r1l4hk",
         "track-name": "1-01 Prologue",
         "start": 532.142259,
-        "end": 561.218744
+        "end": 546.4908847602358
       },
       {
         "id": "region-8o2hdv8lnic",
         "track-name": "1-06 Fantine_s Arrest",
         "start": 92.598456,
-        "end": 112.095217
+        "end": 104.41824904621242
       },
       {
         "id": "region-8ijo15jae3o",
         "track-name": "1-06 Fantine_s Arrest",
         "start": 112.334968,
-        "end": 137.392934
+        "end": 126.95825519511989
+      },
+      {
+        "id": "region-j8rt99ihgq4",
+        "track-name": "1-07 The Runaway Cart",
+        "start": 161.861421,
+        "end": 175.31607197287727
       }
     ]
   },
@@ -392,6 +488,228 @@
         "track-name": "1-09 Fantine_s Death (Come To Me)",
         "start": 112.860743,
         "end": 138.290754
+      }
+    ]
+  },
+  {
+    "name": "honest work",
+    "emoji": "✝️",
+    "regions": [
+      {
+        "id": "region-r9bckbjvt44",
+        "track-name": "1-06 Fantine_s Arrest",
+        "start": 138.022359,
+        "end": 144.056644
+      },
+      {
+        "id": "region-pbgdk3arglc",
+        "track-name": "1-07 The Runaway Cart",
+        "start": 208.228223,
+        "end": 216.770796
+      }
+    ]
+  },
+  {
+    "name": "who am i",
+    "emoji": "🤷‍♂️",
+    "regions": [
+      {
+        "id": "region-1460ch8b0uc",
+        "track-name": "1-08 Who Am I__The Trial",
+        "start": 85.813829,
+        "end": 100.87251498234889
+      },
+      {
+        "id": "region-p8gi8tesa28",
+        "track-name": "1-08 Who Am I__The Trial",
+        "start": 101.36155,
+        "end": 115.203807
+      },
+      {
+        "id": "region-fboiqdf05bo",
+        "track-name": "1-08 Who Am I__The Trial",
+        "start": 115.133856,
+        "end": 128.94178
+      }
+    ]
+  },
+  {
+    "name": "dream",
+    "emoji": "💤",
+    "regions": [
+      {
+        "id": "region-sbs093vbu9g",
+        "track-name": "1-10 The Confrontation",
+        "start": 102.66167,
+        "end": 132.228358
+      },
+      {
+        "id": "region-fgri56lc9hg",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 52.636345,
+        "end": 75.003937
+      },
+      {
+        "id": "region-6kkelplli1g",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 102.262443,
+        "end": 128.182178
+      },
+      {
+        "id": "region-hnt9bd15np",
+        "track-name": "1-04 I Dreamed A Dream",
+        "start": 150.276639,
+        "end": 176.737901
+      },
+      {
+        "id": "region-tlafe5sf2q",
+        "track-name": "1-04 I Dreamed A Dream",
+        "start": 90.971003,
+        "end": 118.07483279939676
+      },
+      {
+        "id": "region-cmb1kv3cg2s",
+        "track-name": "1-04 I Dreamed A Dream",
+        "start": 60.172331,
+        "end": 89.12490937603165
+      },
+      {
+        "id": "region-d575fq0sgrs",
+        "track-name": "1-04 I Dreamed A Dream",
+        "start": 179.119442,
+        "end": 202.920798
+      }
+    ]
+  },
+  {
+    "name": "cosette",
+    "emoji": "🏰",
+    "regions": [
+      {
+        "id": "region-k89n91ssvj",
+        "track-name": "1-11 Castle On A Cloud",
+        "start": 67.552992,
+        "end": 86.847978
+      },
+      {
+        "id": "region-9cgm6dbei6",
+        "track-name": "1-22 The Attack On Rue Plumet",
+        "start": 176.387989,
+        "end": 195.178471
+      },
+      {
+        "id": "region-r1mqlilotsc",
+        "track-name": "1-11 Castle On A Cloud",
+        "start": 86.745744,
+        "end": 105.635436
+      },
+      {
+        "id": "region-cm7mtpdh37",
+        "track-name": "1-11 Castle On A Cloud",
+        "start": 124.966393,
+        "end": 145.502729
+      },
+      {
+        "id": "region-r75i97vjtnc",
+        "track-name": "1-11 Castle On A Cloud",
+        "start": 208.100176,
+        "end": 216.099915
+      },
+      {
+        "id": "region-t11kd3cje78",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 6.518651,
+        "end": 25.36614
+      },
+      {
+        "id": "region-0anieqm6noo",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 334.195793,
+        "end": 354.665896
+      }
+    ]
+  },
+  {
+    "name": "cosette 2",
+    "emoji": "☁️",
+    "regions": [
+      {
+        "id": "region-1t2uj8on44c",
+        "track-name": "1-22 The Attack On Rue Plumet",
+        "start": 162.935933,
+        "end": 176.271908
+      },
+      {
+        "id": "region-30djb9s17jk",
+        "track-name": "1-11 Castle On A Cloud",
+        "start": 106.234606,
+        "end": 124.170719
+      }
+    ]
+  },
+  {
+    "name": "master of the house",
+    "emoji": "🕺",
+    "regions": [
+      {
+        "id": "region-cpmnju59jao",
+        "track-name": "2-20 Wedding Chorale_Beggars At The Feast",
+        "start": 241.097596,
+        "end": 319.5507363324349
+      },
+      {
+        "id": "region-op033j3mr2k",
+        "track-name": "1-12 Master Of The House",
+        "start": 112.213197,
+        "end": 212.9199461126431
+      },
+      {
+        "id": "region-uf7en2i6ifc",
+        "track-name": "1-12 Master Of The House",
+        "start": 217.37339,
+        "end": 319.5039070387096
+      }
+    ]
+  },
+  {
+    "name": "thenardier waltz",
+    "emoji": "💃🏽",
+    "regions": [
+      {
+        "id": "region-4l8fv3i4r3s",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 134.69912,
+        "end": 160.371365
+      },
+      {
+        "id": "region-l0e1e7ul0rk",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 160.456793,
+        "end": 180.740084
+      },
+      {
+        "id": "region-i2vof5a5888",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 197.369312,
+        "end": 223.493008
+      },
+      {
+        "id": "region-02t62lu6ueg",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 224.912295,
+        "end": 242.722987
+      },
+      {
+        "id": "region-csshi9oocs8",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 243.103382,
+        "end": 267.342303
+      },
+      {
+        "id": "region-1nj9mo2mp04",
+        "track-name": "1-13 The Bargain_The Waltz Of Treachery",
+        "start": 285.653431,
+        "end": 311.371812
       }
     ]
   }
