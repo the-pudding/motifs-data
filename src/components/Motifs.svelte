@@ -3,7 +3,7 @@
 
 	let isOpen = $state(true);
 	let sortedMotifs = $derived(
-		[...motifs].sort((a, b) => (a.name < b.name ? -1 : 1))
+		[...motifs].sort((a, b) => b.regions.length - a.regions.length)
 	);
 </script>
 
@@ -13,7 +13,7 @@
 		<span class:visible={savedMessage !== ""}>{savedMessage}</span>
 	</div>
 
-	<button onclick={() => (isOpen = !isOpen)}
+	<button class="collapse" onclick={() => (isOpen = !isOpen)}
 		>{isOpen ? "Collapse" : "Open"}</button
 	>
 
@@ -46,6 +46,9 @@
 	.motifs {
 		width: 400px;
 		height: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 
 	.collapsed {
@@ -54,6 +57,10 @@
 
 	.collapsed h2 {
 		font-size: 16px;
+	}
+
+	button.collapse {
+		align-self: start;
 	}
 
 	.title {
@@ -83,8 +90,6 @@
 		flex-direction: column;
 		gap: 1rem;
 		overflow: scroll;
-		height: 100%;
-		margin-top: 1rem;
 	}
 
 	.collapsed ul {
