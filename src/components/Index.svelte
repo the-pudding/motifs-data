@@ -5,7 +5,6 @@
 	import AllRegions from "$components/AllRegions.svelte";
 	import tracks from "$data/tracks.json";
 	import { onMount } from "svelte";
-	import { base } from "$app/paths";
 
 	let view = $state("motifs");
 	let motifs = $state([]);
@@ -13,7 +12,7 @@
 	let savedMessage = $state("");
 
 	onMount(async () => {
-		const res = await fetch(`${base}/data/motifs.json`);
+		const res = await fetch("data/motifs.json");
 		motifs = await res.json();
 	});
 </script>
