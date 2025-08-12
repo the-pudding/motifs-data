@@ -124,7 +124,7 @@
 								<Clip
 									id={region.id}
 									trackName={region["track-name"]}
-									src={`/assets/audio/full/${region["track-name"]}.mp3`}
+									src={`assets/audio/full/${region["track-name"]}.mp3`}
 									start={region.start}
 									end={region.end}
 									bind:clipPlaying

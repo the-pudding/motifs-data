@@ -36,7 +36,7 @@ async function main() {
 
 				return {
 					name: path.basename(file, ".mp3"),
-					file: `/assets/audio/full/${file}`,
+					file: `assets/audio/full/${file}`,
 					duration
 				};
 			})
