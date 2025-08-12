@@ -1,0 +1,194 @@
+[
+  {
+    "name": "look down",
+    "emoji": "⛓️",
+    "regions": [
+      {
+        "id": "region-lonthjjqbbs",
+        "track-name": "09 Confrontation",
+        "start": 2.878137,
+        "end": 15.724638
+      },
+      {
+        "id": "region-cdk0klp99os",
+        "track-name": "01 Overture-Work Song",
+        "start": 54.822168,
+        "end": 66.25119829473518
+      },
+      {
+        "id": "region-bi1lqh97n7o",
+        "track-name": "01 Overture-Work Song",
+        "start": 66.292889,
+        "end": 77.7862
+      },
+      {
+        "id": "region-ke41g7cb2e8",
+        "track-name": "01 Overture-Work Song",
+        "start": 78.051219,
+        "end": 88.90741
+      },
+      {
+        "id": "region-m7cvuj8ee8s",
+        "track-name": "01 Overture-Work Song",
+        "start": 88.381254,
+        "end": 100.376705
+      },
+      {
+        "id": "region-92i62132of",
+        "track-name": "01 Overture-Work Song",
+        "start": 100.274357,
+        "end": 111.444012
+      },
+      {
+        "id": "region-24l3osr3ss4",
+        "track-name": "01 Overture-Work Song",
+        "start": 128.411181,
+        "end": 139.519178
+      },
+      {
+        "id": "region-ogthmdik35",
+        "track-name": "01 Overture-Work Song",
+        "start": 139.785313,
+        "end": 151.15187
+      }
+    ]
+  },
+  {
+    "name": "24601",
+    "emoji": "🥖",
+    "regions": [
+      {
+        "id": "region-a4s0h5pr0mk",
+        "track-name": "09 Confrontation",
+        "start": 15.647676,
+        "end": 54.871047
+      },
+      {
+        "id": "region-5dik8o5acu4",
+        "track-name": "01 Overture-Work Song",
+        "start": 150.953347,
+        "end": 189.7735060045441
+      }
+    ]
+  },
+  {
+    "name": "empty chairs melody",
+    "emoji": "🪑",
+    "regions": [
+      {
+        "id": "region-rk2sdtqi7qs",
+        "track-name": "02 Valjean Arrested-Valjean Forgiven",
+        "start": 62.047741,
+        "end": 110.298596
+      },
+      {
+        "id": "region-eh6o1ktemh4",
+        "track-name": "32 Empty Chairs at Empty Tables",
+        "start": 6.672848,
+        "end": 52.357135
+      }
+    ]
+  },
+  {
+    "name": "police",
+    "emoji": "🚨",
+    "regions": [
+      {
+        "id": "region-t82pcpvul2g",
+        "track-name": "02 Valjean Arrested-Valjean Forgiven",
+        "start": 14.36144,
+        "end": 30.410592
+      }
+    ]
+  },
+  {
+    "name": "police response",
+    "emoji": "✋🏽",
+    "regions": [
+      {
+        "id": "region-4b137o85eik",
+        "track-name": "02 Valjean Arrested-Valjean Forgiven",
+        "start": 30.717798,
+        "end": 44.700632
+      }
+    ]
+  },
+  {
+    "name": "val&jav soliloquies",
+    "emoji": "💭",
+    "regions": [
+      {
+        "id": "region-iebbq3g1d4k",
+        "track-name": "03 What Have I Done-",
+        "start": 18.852384,
+        "end": 200.21117572799696
+      },
+      {
+        "id": "region-9m11fsmrp6k",
+        "track-name": "30 Javert's Suicide",
+        "start": 12.36055,
+        "end": 189.809047793289
+      }
+    ]
+  },
+  {
+    "name": "lovely ladies",
+    "emoji": "👯‍♀️",
+    "regions": [
+      {
+        "id": "region-65p5m15lj3k",
+        "track-name": "06 Lovely Ladies",
+        "start": 18.904137,
+        "end": 34.466083
+      },
+      {
+        "id": "region-epqh699uh2k",
+        "track-name": "06 Lovely Ladies",
+        "start": 3.768293,
+        "end": 18.889517
+      },
+      {
+        "id": "region-kqvpehtulak",
+        "track-name": "06 Lovely Ladies",
+        "start": 62.623563,
+        "end": 77.834348
+      },
+      {
+        "id": "region-udq45n12jcs",
+        "track-name": "06 Lovely Ladies",
+        "start": 110.49358871463733,
+        "end": 126.186199
+      },
+      {
+        "id": "region-gcoq5bth3oc",
+        "track-name": "06 Lovely Ladies",
+        "start": 173.744713,
+        "end": 189.578175
+      },
+      {
+        "id": "region-75q596plvmo",
+        "track-name": "06 Lovely Ladies",
+        "start": 190.787882,
+        "end": 227.874334
+      }
+    ]
+  },
+  {
+    "name": "recitation",
+    "emoji": "🗣️",
+    "regions": [
+      {
+        "id": "region-4l8dcvaltp",
+        "track-name": "06 Lovely Ladies",
+        "start": 34.609925,
+        "end": 61.22876308092604
+      },
+      {
+        "id": "region-p0u5vbu2nlk",
+        "track-name": "06 Lovely Ladies",
+        "start": 78.45361,
+        "end": 109.200094
+      }
+    ]
+  }
+]
