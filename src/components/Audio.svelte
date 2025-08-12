@@ -11,8 +11,6 @@
 </script>
 
 <div class="audio">
-	<h2>Les Misérables</h2>
-
 	{#if selectedTrack}
 		<AudioPlayer
 			name={selectedTrack.name}

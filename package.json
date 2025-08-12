@@ -40,6 +40,8 @@
 	},
 	"browserslist": "> 0.5%, last 4 versions, not ie <= 11, not ie_mob <= 11",
 	"dependencies": {
+		"get-mp3-duration": "^1.0.0",
+		"lodash": "^4.17.21",
 		"wavesurfer.js": "^7.10.1"
 	}
 }

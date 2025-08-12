@@ -6,8 +6,10 @@
 	let {
 		src,
 		name,
-		motifs = $bindable(),
-		savedMessage = $bindable()
+		motifs = $bindable([]),
+		savedMessage = $bindable(),
+		editable = true,
+		motifColors
 	} = $props();
 
 	const waveColor = "#CCBB44";
@@ -43,13 +45,13 @@
 		}
 	};
 
-	const createRegion = ({ id = "", start, end, content = "" }) => {
+	const createRegion = ({ id = "", start, end, content = "", color }) => {
 		const r = regions.addRegion({
 			id,
 			start,
 			end,
 			content,
-			color: regionColor,
+			color,
 			drag: true,
 			resize: true
 		});
@@ -304,7 +306,8 @@
 							id: region.id,
 							start: +region.start,
 							end: +region.end,
-							content: `${motif.emoji} ${motif.name}`
+							content: `${motif.emoji} ${motif.name}`,
+							color: motifColors ? motifColors[motif.name] : regionColor
 						});
 					}
 				});
@@ -331,7 +334,11 @@
 				if (selectedRegion && r.id === selectedRegion.id) {
 					regionEl.style.background = regionHighlightColor;
 				} else {
-					regionEl.style.background = regionColor;
+					const m = motifs.find((m) =>
+						m.regions.some((region) => region.id === r.id)
+					);
+					regionEl.style.background =
+						m && motifColors ? motifColors[m.name] : regionColor;
 				}
 			}
 		}
@@ -374,7 +381,7 @@
 			container,
 			waveColor: waveColor,
 			progressColor: progressColor,
-			height: "auto",
+			height: 50,
 			dragToSeek: true,
 			plugins: [regions]
 		});
@@ -406,50 +413,52 @@
 
 <svelte:window on:keydown={onKeyDown} onclick={onWindowClick} />
 
-<div class="player">
+<div class="player" class:editable>
 	<h2>{name}</h2>
 	<div class="waveform" bind:this={container}></div>
 
-	<div class="controls">
-		<span class="timestamp">{timestampFormatted}</span>
-		<button onclick={togglePlay}>Play / Pause</button>
+	{#if editable}
+		<div class="controls">
+			<span class="timestamp">{timestampFormatted}</span>
+			<button onclick={togglePlay}>Play / Pause</button>
 
-		{#if selectedRegion}
-			<div class="region-controls">
-				<span>Region</span>
-				<button onclick={playRegion}>Play</button>
-				<button onclick={deleteRegion}>Delete</button>
-				<select bind:value={selectedMotif}>
-					<option disabled selected value={undefined}>Select a motif</option>
-					{#each sortedMotifs as motif}
-						<option value={`${motif.emoji} ${motif.name}`}
-							>{`${motif.emoji} ${motif.name}`}</option
-						>
-					{/each}
-					<option value={"new"}>➕ Add new</option>
-				</select>
+			{#if selectedRegion}
+				<div class="region-controls">
+					<span>Region</span>
+					<button onclick={playRegion}>Play</button>
+					<button onclick={deleteRegion}>Delete</button>
+					<select bind:value={selectedMotif}>
+						<option disabled selected value={undefined}>Select a motif</option>
+						{#each sortedMotifs as motif}
+							<option value={`${motif.emoji} ${motif.name}`}
+								>{`${motif.emoji} ${motif.name}`}</option
+							>
+						{/each}
+						<option value={"new"}>➕ Add new</option>
+					</select>
 
-				{#if selectedMotif === "new"}
-					<div class="inputs">
-						<input
-							bind:value={inputNewMotifName}
-							type="text"
-							placeholder="New motif name"
-						/>
-						<input
-							bind:value={inputNewMotifEmoji}
-							type="text"
-							placeholder="Emoji"
-						/>
-						<button onclick={createMotif}>Save</button>
-						{#if inputErrorMessage}
-							<span class="error">{inputErrorMessage}</span>
-						{/if}
-					</div>
-				{/if}
-			</div>
-		{/if}
-	</div>
+					{#if selectedMotif === "new"}
+						<div class="inputs">
+							<input
+								bind:value={inputNewMotifName}
+								type="text"
+								placeholder="New motif name"
+							/>
+							<input
+								bind:value={inputNewMotifEmoji}
+								type="text"
+								placeholder="Emoji"
+							/>
+							<button onclick={createMotif}>Save</button>
+							{#if inputErrorMessage}
+								<span class="error">{inputErrorMessage}</span>
+							{/if}
+						</div>
+					{/if}
+				</div>
+			{/if}
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -473,6 +482,14 @@
 
 	.inputs input:nth-of-type(2) {
 		width: 65px;
+	}
+
+	h2 {
+		font-size: 14px;
+	}
+
+	.editable h2 {
+		font-size: 36px;
 	}
 
 	.error {
