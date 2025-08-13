@@ -9,7 +9,8 @@
 		motifs = $bindable([]),
 		savedMessage = $bindable(),
 		editable = true,
-		motifColors
+		motifColors,
+		musicalId
 	} = $props();
 
 	const waveColor = "#CCBB44";
@@ -250,7 +251,7 @@
 		const res = await fetch("/api/save-motifs", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(motifs)
+			body: JSON.stringify({ musicalId, motifs })
 		});
 
 		const data = await res.json();
@@ -381,7 +382,7 @@
 			container,
 			waveColor: waveColor,
 			progressColor: progressColor,
-			height: 50,
+			height: editable ? "auto" : 50,
 			dragToSeek: true,
 			plugins: [regions]
 		});

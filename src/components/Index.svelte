@@ -3,8 +3,16 @@
 	import MotifsPreview from "$components/MotifsPreview.svelte";
 	import Motifs from "$components/Motifs.svelte";
 	import AllRegions from "$components/AllRegions.svelte";
-	import tracks from "$data/tracks.json";
+	import lesMisTracks from "$data/lesmis-tracks.json";
+	import hamiltonTracks from "$data/hamilton-tracks.json";
 	import { onMount } from "svelte";
+
+	const musicalId = "hamilton";
+	const tracksMap = {
+		lesmis: lesMisTracks,
+		hamilton: hamiltonTracks
+	};
+	const tracks = tracksMap[musicalId];
 
 	let view = $state("motifs");
 	let motifs = $state([]);
@@ -12,7 +20,7 @@
 	let savedMessage = $state("");
 
 	onMount(async () => {
-		const res = await fetch("data/motifs.json");
+		const res = await fetch(`data/${musicalId}-motifs.json`);
 		motifs = await res.json();
 	});
 </script>
@@ -23,10 +31,10 @@
 		<button class:selected={view === "edit"} onclick={() => (view = "edit")}
 			>Edit regions</button
 		>
-		<button
+		<!-- <button
 			class:selected={view === "regions"}
 			onclick={() => (view = "regions")}>All regions</button
-		>
+		> -->
 		<button class:selected={view === "motifs"} onclick={() => (view = "motifs")}
 			>Motifs</button
 		>
@@ -34,12 +42,18 @@
 
 	<section>
 		{#if view === "edit"}
-			<Audio bind:motifs bind:selectedTrack bind:savedMessage />
+			<Audio
+				bind:motifs
+				bind:selectedTrack
+				bind:savedMessage
+				{tracks}
+				{musicalId}
+			/>
 			<MotifsPreview bind:motifs {savedMessage} />
 		{:else if view === "regions"}
-			<AllRegions {motifs} />
+			<AllRegions {motifs} {tracks} />
 		{:else if view === "motifs"}
-			<Motifs bind:motifs />
+			<Motifs bind:motifs {tracks} {musicalId} />
 		{/if}
 	</section>
 </main>
@@ -65,7 +79,10 @@
 	section {
 		display: flex;
 		gap: 5rem;
-		/* height: 100%; */
+	}
+
+	.fixed section {
+		height: 100%;
 	}
 
 	button.selected {

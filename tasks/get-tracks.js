@@ -6,15 +6,23 @@ import getMP3Duration from "get-mp3-duration";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const musicalId = "hamilton";
+
 const audioDir = path.join(
 	__dirname,
 	"..",
 	"static",
 	"assets",
 	"audio",
-	"full"
+	musicalId
 );
-const outputFile = path.join(__dirname, "..", "src", "data", "tracks.json");
+const outputFile = path.join(
+	__dirname,
+	"..",
+	"src",
+	"data",
+	`${musicalId}-tracks.json`
+);
 
 async function main() {
 	try {
@@ -36,7 +44,7 @@ async function main() {
 
 				return {
 					name: path.basename(file, ".mp3"),
-					file: `assets/audio/full/${file}`,
+					file: `assets/audio/${musicalId}/${file}`,
 					duration
 				};
 			})

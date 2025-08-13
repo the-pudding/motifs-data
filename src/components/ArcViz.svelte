@@ -1,10 +1,7 @@
 <script>
 	import { scaleLinear } from "d3-scale";
-	import tracks from "$data/tracks.json";
 
-	let { motifs = [], alternate = false, motifColors } = $props();
-
-	$inspect({ motifs });
+	let { motifs = [], alternate = false, motifColors, tracks } = $props();
 
 	const getFullTimestamp = (trackName, timestamp) => {
 		const track = tracks.find((t) => t.name === trackName);
@@ -42,6 +39,7 @@
 			return acc;
 		}, {})
 	);
+	const firstSongOfAct2 = tracks.find((d) => d.name.includes("2-01")).name;
 
 	function arcPath(p1, p2, i) {
 		const dx = Math.max(0, p2.x - p1.x);
@@ -64,15 +62,11 @@
 >
 	<svg>
 		<line x1="0" y1="50%" x2="100%" y2="50%" stroke="white" />
-		<!-- line where track 2-01 Building The Barricade (Upon These Stones) begins -->
+		<!-- line where track containing "2-01" begins -->
 		<line
-			x1={xScale(
-				getFullTimestamp("2-01 Building The Barricade (Upon These Stones)", 0)
-			)}
+			x1={xScale(getFullTimestamp(firstSongOfAct2, 0))}
 			y1="20%"
-			x2={xScale(
-				getFullTimestamp("2-01 Building The Barricade (Upon These Stones)", 0)
-			)}
+			x2={xScale(getFullTimestamp(firstSongOfAct2, 0))}
 			y2="80%"
 			stroke="white"
 			stroke-width="1"

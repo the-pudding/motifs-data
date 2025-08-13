@@ -1,12 +1,12 @@
 <script>
 	import AudioPlayer from "$components/AudioPlayer.svelte";
-	import tracks from "$data/tracks.json";
-	import { onMount } from "svelte";
 
 	let {
 		motifs = $bindable(),
 		selectedTrack = $bindable(),
-		savedMessage = $bindable()
+		savedMessage = $bindable(),
+		tracks,
+		musicalId
 	} = $props();
 </script>
 
@@ -17,6 +17,7 @@
 			src={selectedTrack.file}
 			bind:motifs
 			bind:savedMessage
+			{musicalId}
 		/>
 	{/if}
 

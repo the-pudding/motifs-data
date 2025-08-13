@@ -3,7 +3,7 @@
 	import Clip from "$components/Clip.svelte";
 	import ArcViz from "$components/ArcViz.svelte";
 
-	let { motifs = $bindable() } = $props();
+	let { motifs = $bindable(), tracks, musicalId } = $props();
 
 	const colorPalette = [
 		"#2F4F4F",
@@ -83,6 +83,7 @@
 		motifs={motifs.filter((d) => bigVizSelectedMotifs.includes(d.name))}
 		alternate={true}
 		{motifColors}
+		{tracks}
 	/>
 	<div class="checkboxes">
 		<button onclick={() => (bigVizSelectedMotifs = motifs.map((m) => m.name))}
@@ -115,7 +116,7 @@
 					<h3 class="name">{motif.emoji} {motif.name} ({numOccurences})</h3>
 
 					{#if selectedMotif === motif.name}
-						<ArcViz motifs={filteredMotifs} {motifColors} />
+						<ArcViz motifs={filteredMotifs} {motifColors} {tracks} />
 					{/if}
 
 					{#if selectedMotif === motif.name}
@@ -124,7 +125,7 @@
 								<Clip
 									id={region.id}
 									trackName={region["track-name"]}
-									src={`assets/audio/full/${region["track-name"]}.mp3`}
+									src={`assets/audio/${musicalId}/${region["track-name"]}.mp3`}
 									start={region.start}
 									end={region.end}
 									bind:clipPlaying

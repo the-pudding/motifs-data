@@ -1,8 +1,7 @@
 <script>
 	import AudioPlayer from "$components/AudioPlayer.svelte";
-	import tracks from "$data/tracks.json";
 
-	let { motifs } = $props();
+	let { motifs, tracks } = $props();
 
 	const colorPalette = [
 		"#2F4F4F",
