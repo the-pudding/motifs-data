@@ -2,19 +2,22 @@
 	import Audio from "$components/Audio.svelte";
 	import MotifsPreview from "$components/MotifsPreview.svelte";
 	import Motifs from "$components/Motifs.svelte";
+	import Characters from "$components/Characters.svelte";
 	import AllRegions from "$components/AllRegions.svelte";
 	import lesMisTracks from "$data/lesmis-tracks.json";
 	import hamiltonTracks from "$data/hamilton-tracks.json";
+	import wickedTracks from "$data/wicked-tracks.json";
 	import { onMount } from "svelte";
 
-	const musicalId = "hamilton";
+	const musicalId = "wicked";
 	const tracksMap = {
 		lesmis: lesMisTracks,
-		hamilton: hamiltonTracks
+		hamilton: hamiltonTracks,
+		wicked: wickedTracks
 	};
 	const tracks = tracksMap[musicalId];
 
-	let view = $state("motifs");
+	let view = $state("characters");
 	let motifs = $state([]);
 	let selectedTrack = $state(tracks[0]);
 	let savedMessage = $state("");
@@ -27,16 +30,18 @@
 
 <main class:fixed={view === "edit"}>
 	<div class="header">
-		<h2>Les Misérables</h2>
+		<h2>{musicalId}</h2>
 		<button class:selected={view === "edit"} onclick={() => (view = "edit")}
 			>Edit regions</button
 		>
-		<!-- <button
-			class:selected={view === "regions"}
-			onclick={() => (view = "regions")}>All regions</button
-		> -->
+
 		<button class:selected={view === "motifs"} onclick={() => (view = "motifs")}
 			>Motifs</button
+		>
+
+		<button
+			class:selected={view === "characters"}
+			onclick={() => (view = "characters")}>Refine</button
 		>
 	</div>
 
@@ -54,6 +59,8 @@
 			<AllRegions {motifs} {tracks} />
 		{:else if view === "motifs"}
 			<Motifs bind:motifs {tracks} {musicalId} />
+		{:else if view === "characters"}
+			<Characters bind:motifs {tracks} {musicalId} />
 		{/if}
 	</section>
 </main>

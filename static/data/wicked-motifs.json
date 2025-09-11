@@ -1,0 +1,218 @@
+[
+  {
+    "name": "no one mourns",
+    "emoji": "😈",
+    "regions": [
+      {
+        "id": "region-4gjlpqip5hg",
+        "track-name": "1-01 No One Mourns the Wicked",
+        "start": 146.112689,
+        "end": 168.203091,
+        "character": [
+          "ensemble"
+        ]
+      },
+      {
+        "id": "region-v0ocs8do5p4",
+        "track-name": "2-01 Thank Goodness",
+        "start": 14.600454,
+        "end": 36.413286,
+        "character": [
+          "ensemble"
+        ]
+      },
+      {
+        "id": "region-785ahb7bduk",
+        "track-name": "2-01 Thank Goodness",
+        "start": 49.142332,
+        "end": 61.508196
+      },
+      {
+        "id": "region-jk935ut9on8",
+        "track-name": "1-01 No One Mourns the Wicked",
+        "start": 324.925167,
+        "end": 339.768301
+      },
+      {
+        "id": "region-co4ouglbjo8",
+        "track-name": "2-08 Finale",
+        "start": 6.629787,
+        "end": 20.633546180045695,
+        "character": [
+          "ensemble"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "unlimited",
+    "emoji": "💚",
+    "regions": [
+      {
+        "id": "region-532go7j0dm8",
+        "track-name": "1-03 The Wizard and I",
+        "start": 218.377353,
+        "end": 235.696576,
+        "character": [
+          "elphaba"
+        ]
+      },
+      {
+        "id": "region-9t5t7fsi8so",
+        "track-name": "1-11 Defying Gravity",
+        "start": 179.573869,
+        "end": 194.900921,
+        "character": [
+          "elphaba"
+        ]
+      },
+      {
+        "id": "region-s96elu8rh6c",
+        "track-name": "2-07 For Good",
+        "start": 1.269771,
+        "end": 22.433018,
+        "character": [
+          "elphaba"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "i'm not that girl",
+    "emoji": "💔",
+    "regions": [
+      {
+        "id": "region-6taaj1sgs6",
+        "track-name": "2-03 I'm Not That Girl (Reprise)",
+        "start": 11.967135,
+        "end": 50.199009,
+        "character": [
+          "glinda"
+        ]
+      },
+      {
+        "id": "region-569ajrrlbcc",
+        "track-name": "1-08 I'm Not That Girl",
+        "start": 21.940118,
+        "end": 48.069181,
+        "character": [
+          "elphaba"
+        ]
+      },
+      {
+        "id": "region-enjducodu6k",
+        "track-name": "1-08 I'm Not That Girl",
+        "start": 48.488517,
+        "end": 74.913025
+      },
+      {
+        "id": "region-egbfvctb4k4",
+        "track-name": "1-08 I'm Not That Girl",
+        "start": 92.851024,
+        "end": 126.544283
+      },
+      {
+        "id": "region-oerc81ckm8k",
+        "track-name": "1-08 I'm Not That Girl",
+        "start": 133.092672,
+        "end": 173.409009
+      }
+    ]
+  },
+  {
+    "name": "no good deed",
+    "emoji": "⚖️",
+    "regions": [
+      {
+        "id": "region-df3v4uqmt58",
+        "track-name": "2-06 March of the Witch Hunters",
+        "start": 14.414704,
+        "end": 28.139527,
+        "character": [
+          "ensemble"
+        ]
+      },
+      {
+        "id": "region-4m01nl6unm4",
+        "track-name": "2-06 March of the Witch Hunters",
+        "start": 60.068054,
+        "end": 78.51563
+      },
+      {
+        "id": "region-tp8drru1hsk",
+        "track-name": "2-05 No Good Deed",
+        "start": 75.97175599999998,
+        "end": 91.1095428643403,
+        "character": [
+          "elphaba"
+        ]
+      },
+      {
+        "id": "region-qfd9aok4fas",
+        "track-name": "2-05 No Good Deed",
+        "start": 150.170494,
+        "end": 168.317329
+      }
+    ]
+  },
+  {
+    "name": "for good",
+    "emoji": "👩‍❤️‍👩",
+    "regions": [
+      {
+        "id": "region-5hkbrbgt9m4",
+        "track-name": "2-08 Finale",
+        "start": 51.493976,
+        "end": 84.178208,
+        "character": [
+          "glinda"
+        ]
+      },
+      {
+        "id": "region-0bqqgpqtdh4",
+        "track-name": "2-07 For Good",
+        "start": 110.965926,
+        "end": 134.53113,
+        "character": [
+          "glinda"
+        ]
+      },
+      {
+        "id": "region-ld04tcbfbso",
+        "track-name": "2-07 For Good",
+        "start": 191.404605,
+        "end": 210.15185
+      },
+      {
+        "id": "region-16qa3fdrq78",
+        "track-name": "2-07 For Good",
+        "start": 246.892232,
+        "end": 297.22237600900064
+      }
+    ]
+  },
+  {
+    "name": "wicked",
+    "emoji": "💥",
+    "regions": [
+      {
+        "id": "region-quha76mchik",
+        "track-name": "1-01 No One Mourns the Wicked",
+        "start": 381.39199099999985,
+        "end": 397.191314,
+        "character": [
+          "ensemble"
+        ]
+      },
+      {
+        "id": "region-gsfd2eg8uu4",
+        "track-name": "2-08 Finale",
+        "start": 83.61811100000001,
+        "end": 98.59101298226432,
+        "character": [
+          "ensemble"
+        ]
+      }
+    ]
+  }
+]

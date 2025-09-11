@@ -1,4 +1,4 @@
-PHONY: github pudding
+PHONY: github pudding copy-data
 
 github:
 	rm -rf docs
@@ -18,6 +18,22 @@ staging:
 production:
 	npm run build
 	make pudding
+
+DATA_SRC    := static/data
+TRACKS_SRC  := src/data
+MOTIFS_DIR  := ../motifs/src/data/motifs
+TRACKS_DIR  := ../motifs/src/data/tracks
+
+copy-data:
+	@mkdir -p "$(MOTIFS_DIR)" "$(TRACKS_DIR)"
+	# Copy everything from static/data -> motifs/
+	@cp -R "$(DATA_SRC)/." "$(MOTIFS_DIR)/"
+	# Copy *-tracks.json from src/data -> tracks/ (safe if no matches)
+	@for f in $(TRACKS_SRC)/*-tracks.json; do \
+		[ -e "$$f" ] && cp "$$f" "$(TRACKS_DIR)/" || true; \
+	done
+	@echo "✓ Copied motifs to $(MOTIFS_DIR)"
+	@echo "✓ Copied track JSONs to $(TRACKS_DIR)"
 
 # aws-sync:
 # 	aws s3 sync build s3://pudding.cool/year/month/name --delete --cache-control 'max-age=31536000'

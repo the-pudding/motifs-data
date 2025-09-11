@@ -7,25 +7,37 @@
         "id": "region-t027flahsvg",
         "track-name": "1-01 Alexander Hamilton",
         "start": 3.626907,
-        "end": 18.749756
+        "end": 18.749756,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-c7hirf2nui",
         "track-name": "1-09 A Winter's Ball",
         "start": 2.814729,
-        "end": 17.918882
+        "end": 17.918882,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-3a7br3snmt8",
         "track-name": "1-18 Guns and Ships",
         "start": 2.037625,
-        "end": 17.473087
+        "end": 17.473087,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-e2ai0pv6tdg",
         "track-name": "2-11 The Adams Administration",
         "start": 2.844119,
-        "end": 18.311228
+        "end": 18.311228,
+        "character": [
+          "aaron burr"
+        ]
       }
     ]
   },
@@ -37,13 +49,19 @@
         "id": "region-a8494itcacs",
         "track-name": "1-23 Non-Stop",
         "start": 231.569064,
-        "end": 242.346101
+        "end": 242.74610099999998,
+        "character": [
+          "eliza"
+        ]
       },
       {
         "id": "region-igkrf1l0m6g",
         "track-name": "1-17 That Would Be Enough",
-        "start": 63.949291,
-        "end": 91.08148185037665
+        "start": 64.24929099999999,
+        "end": 91.08148185037665,
+        "character": [
+          "eliza"
+        ]
       },
       {
         "id": "region-3ne43clt2a",
@@ -55,19 +73,28 @@
         "id": "region-8od1glg8bdg",
         "track-name": "2-18 It's Quiet Uptown",
         "start": 103.708645,
-        "end": 132.948771
+        "end": 132.948771,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-3sa60gtsomk",
         "track-name": "2-21 Best of Wives and Best of Women",
         "start": 25.529709,
-        "end": 27.274835
+        "end": 27.274835,
+        "character": [
+          "eliza"
+        ]
       },
       {
         "id": "region-f84p7rj2444",
         "track-name": "2-23 Who Lives, Who Dies, Who Tells Your Story",
-        "start": 74.364753,
-        "end": 76.164931
+        "start": 73.86475299999996,
+        "end": 75.86493100000001,
+        "character": [
+          "eliza"
+        ]
       },
       {
         "id": "region-hmar2ofdo2",
@@ -85,13 +112,19 @@
         "id": "region-r6c94c2d0fc",
         "track-name": "1-19 History Has Its Eyes On You",
         "start": 0.848797,
-        "end": 14.492857
+        "end": 14.492857,
+        "character": [
+          "washington"
+        ]
       },
       {
         "id": "region-nnlk497935k",
         "track-name": "1-23 Non-Stop",
-        "start": 303.95871,
-        "end": 315.594001
+        "start": 304.65871000000016,
+        "end": 315.9940010000001,
+        "character": [
+          "washington"
+        ]
       },
       {
         "id": "region-d5mvh8aes1g",
@@ -108,14 +141,22 @@
       {
         "id": "region-i7uegrl16lo",
         "track-name": "1-23 Non-Stop",
-        "start": 331.848683,
-        "end": 337.082375
+        "start": 333.14868300000006,
+        "end": 338.3823750000003,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-7t8i2rns4gs",
         "track-name": "1-05 The Schuyler Sisters",
         "start": 114.838509,
-        "end": 124.370451
+        "end": 124.370451,
+        "character": [
+          "eliza",
+          "angelica",
+          "peggy"
+        ]
       },
       {
         "id": "region-7isad2cdvrk",
@@ -132,8 +173,12 @@
       {
         "id": "region-57vdet995es",
         "track-name": "2-06 Schuyler Defeated",
-        "start": 21.236966,
-        "end": 29.850132
+        "start": 21.336966,
+        "end": 29.850132,
+        "character": [
+          "eliza",
+          "phillip"
+        ]
       }
     ]
   },
@@ -144,14 +189,20 @@
       {
         "id": "region-98jbhde512",
         "track-name": "1-23 Non-Stop",
-        "start": 338.197524,
-        "end": 340.768607
+        "start": 337.7975239999999,
+        "end": 340.26860699999986,
+        "character": [
+          "eliza"
+        ]
       },
       {
         "id": "region-9dvun7bcq0k",
         "track-name": "1-10 Helpless",
         "start": 11.840309,
-        "end": 24.859985
+        "end": 24.859985,
+        "character": [
+          "eliza"
+        ]
       },
       {
         "id": "region-a78o8bibvuk",
@@ -175,7 +226,10 @@
         "id": "region-nfer14rn7mo",
         "track-name": "1-11 Satisfied",
         "start": 161.167578,
-        "end": 170.914392
+        "end": 170.914392,
+        "character": [
+          "eliza"
+        ]
       }
     ]
   },
@@ -186,20 +240,29 @@
       {
         "id": "region-bh320nustn4",
         "track-name": "1-23 Non-Stop",
-        "start": 344.02717,
-        "end": 364.2954627441734
+        "start": 343.5271699999999,
+        "end": 364.2954627441734,
+        "character": [
+          "angelica"
+        ]
       },
       {
         "id": "region-6g727q3gcjc",
         "track-name": "1-11 Satisfied",
         "start": 314.106133,
-        "end": 323.2061
+        "end": 323.2061,
+        "character": [
+          "angelica"
+        ]
       },
       {
         "id": "region-intm4s9fb2c",
         "track-name": "2-14 The Reynolds Pamphlet",
         "start": 84.751772,
-        "end": 90.726415
+        "end": 90.726415,
+        "character": [
+          "angelica"
+        ]
       }
     ]
   },
@@ -210,14 +273,20 @@
       {
         "id": "region-gar09mtq884",
         "track-name": "1-23 Non-Stop",
-        "start": 348.10534,
-        "end": 368.969387146622
+        "start": 348.8053400000002,
+        "end": 368.969387146622,
+        "character": [
+          "washington"
+        ]
       },
       {
         "id": "region-7p01rre6ado",
         "track-name": "1-19 History Has Its Eyes On You",
-        "start": 24.815205,
-        "end": 32.629982
+        "start": 24.615204999999996,
+        "end": 32.629982,
+        "character": [
+          "washington"
+        ]
       },
       {
         "id": "region-bf3nc7dm5r",
@@ -241,13 +310,19 @@
         "id": "region-ek2oj47vki8",
         "track-name": "1-23 Non-Stop",
         "start": 369.680448,
-        "end": 382.613579
+        "end": 382.613579,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-9ll3bfg4a3o",
         "track-name": "1-03 My Shot",
         "start": 0.029767491126302087,
-        "end": 10.017947
+        "end": 10.017947,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-v4n44tsai6k",
@@ -295,13 +370,19 @@
         "id": "region-4otsqbvkqho",
         "track-name": "1-08 Right Hand Man",
         "start": 273.758317,
-        "end": 276.275659
+        "end": 276.275659,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-jcbrc1ohpvc",
         "track-name": "1-20 Yorktown (The World Turned Upside Down)",
         "start": 31.239217,
-        "end": 43.323484
+        "end": 43.323484,
+        "character": [
+          "hamilton"
+        ]
       }
     ]
   },
@@ -313,19 +394,28 @@
         "id": "region-q1a1427s4hk",
         "track-name": "1-03 My Shot",
         "start": 232.431588,
-        "end": 254.228828
+        "end": 254.228828,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-je99jk0cqvs",
         "track-name": "1-20 Yorktown (The World Turned Upside Down)",
-        "start": 50.513439,
-        "end": 61.13543
+        "start": 50.313438999999995,
+        "end": 61.13543,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-jbtqecdkd4k",
         "track-name": "2-22 The World Was Wide Enough",
-        "start": 102.285808,
-        "end": 117.858615
+        "start": 102.58580799999999,
+        "end": 117.858615,
+        "character": [
+          "hamilton"
+        ]
       }
     ]
   },
@@ -336,8 +426,14 @@
       {
         "id": "region-r4elqki0r1c",
         "track-name": "1-04 The Story of Tonight",
-        "start": 23.445203,
-        "end": 46.78668220660788
+        "start": 22.945202999999992,
+        "end": 46.78668220660788,
+        "character": [
+          "hamilton",
+          "john laurens",
+          "lafayette",
+          "hercules mulligan"
+        ]
       },
       {
         "id": "region-7nft0b790pg",
@@ -355,13 +451,22 @@
         "id": "region-v58kcjnup1",
         "track-name": "2-22 The World Was Wide Enough",
         "start": 185.023787,
-        "end": 189.350078
+        "end": 187.450078,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-nnef6pru18o",
         "track-name": "1-12 The Story of Tonight (Reprise)",
         "start": 20.76356,
-        "end": 43.917587
+        "end": 43.917587,
+        "character": [
+          "hamilton",
+          "john laurens",
+          "lafayette",
+          "hercules mulligan"
+        ]
       }
     ]
   },
@@ -384,26 +489,38 @@
       {
         "id": "region-co6sij76b4g",
         "track-name": "1-02 Aaron Burr, Sir",
-        "start": 62.942719,
-        "end": 74.709433
+        "start": 62.64271899999999,
+        "end": 74.709433,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-9mdkf97iq4g",
         "track-name": "2-19 The Election Of 1800",
         "start": 64.667012,
-        "end": 78.923587
+        "end": 78.923587,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-r22jri9o424",
         "track-name": "1-12 The Story of Tonight (Reprise)",
         "start": 94.347703,
-        "end": 96.776817
+        "end": 96.776817,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-auput2hltmg",
         "track-name": "2-05 The Room Where It Happens",
-        "start": 24.635086,
-        "end": 35.799754
+        "start": 25.735086000000017,
+        "end": 36.099754000000004,
+        "character": [
+          "hamilton"
+        ]
       }
     ]
   },
@@ -415,7 +532,12 @@
         "id": "region-4e1h2ppulic",
         "track-name": "1-10 Helpless",
         "start": 85.42291,
-        "end": 102.721292
+        "end": 102.721292,
+        "character": [
+          "eliza",
+          "hamilton",
+          "angelica"
+        ]
       },
       {
         "id": "region-bd9un5vii2c",
@@ -427,7 +549,11 @@
         "id": "region-lk87529jp6s",
         "track-name": "1-11 Satisfied",
         "start": 177.583671,
-        "end": 182.803697
+        "end": 182.803697,
+        "character": [
+          "hamilton",
+          "angelica"
+        ]
       },
       {
         "id": "region-vhoean22o3c",
@@ -450,20 +576,29 @@
       {
         "id": "region-kns1kuq0cig",
         "track-name": "1-07 You'll Be Back",
-        "start": 8.176207,
-        "end": 207.38641802407773
+        "start": 7.276207000000003,
+        "end": 207.38641802407773,
+        "character": [
+          "king george"
+        ]
       },
       {
         "id": "region-jrua8pqqklk",
         "track-name": "1-21 What Comes Next_",
         "start": 0.02322,
-        "end": 95.98173789428755
+        "end": 95.98173789428755,
+        "character": [
+          "king george"
+        ]
       },
       {
         "id": "region-r092r8atpts",
         "track-name": "2-10 I Know Him",
         "start": 7.069199,
-        "end": 96.27404985529193
+        "end": 96.27404985529193,
+        "character": [
+          "king george"
+        ]
       }
     ]
   },
@@ -475,7 +610,10 @@
         "id": "region-m2st2jc3tcg",
         "track-name": "1-15 Ten Duel Commandments",
         "start": 2.842427,
-        "end": 7.301128
+        "end": 6.801128000000002,
+        "character": [
+          "ensemble"
+        ]
       },
       {
         "id": "region-lc9gbr7lbo8",
@@ -487,13 +625,20 @@
         "id": "region-i76ln67nhfg",
         "track-name": "2-03 Take a Break",
         "start": 0.012369169406970804,
-        "end": 10.866975
+        "end": 10.866975,
+        "character": [
+          "eliza",
+          "phillip"
+        ]
       },
       {
         "id": "region-ilf5n1t2ass",
         "track-name": "2-16 Blow Us All Away",
-        "start": 170.597846,
-        "end": 173.333406
+        "start": 171.09784599999998,
+        "end": 173.73340599999997,
+        "character": [
+          "ensemble"
+        ]
       },
       {
         "id": "region-64forun7fg8",
@@ -505,13 +650,20 @@
         "id": "region-eofqfci47jc",
         "track-name": "2-22 The World Was Wide Enough",
         "start": 2.900285,
-        "end": 7.238752
+        "end": 6.938752000000001,
+        "character": [
+          "ensemble"
+        ]
       },
       {
         "id": "region-vnhkru6i0jk",
         "track-name": "2-17 Stay Alive (Reprise)",
         "start": 94.156655,
-        "end": 108.092255
+        "end": 108.092255,
+        "character": [
+          "eliza",
+          "phillip"
+        ]
       }
     ]
   },
@@ -522,14 +674,20 @@
       {
         "id": "region-s528ibq7hns",
         "track-name": "2-03 Take a Break",
-        "start": 78.637119,
-        "end": 102.682899
+        "start": 79.23711899999996,
+        "end": 102.682899,
+        "character": [
+          "phillip"
+        ]
       },
       {
         "id": "region-fqfafpqha9o",
         "track-name": "2-16 Blow Us All Away",
-        "start": 141.375661,
-        "end": 151.80524
+        "start": 140.97566100000003,
+        "end": 151.80524,
+        "character": [
+          "phillip"
+        ]
       }
     ]
   },
@@ -540,20 +698,29 @@
       {
         "id": "region-jo99ihppho",
         "track-name": "2-16 Blow Us All Away",
-        "start": 162.872859,
-        "end": 170.348453
+        "start": 163.072859,
+        "end": 170.648453,
+        "character": [
+          "phillip"
+        ]
       },
       {
         "id": "region-htivbc62mlo",
         "track-name": "1-15 Ten Duel Commandments",
-        "start": 96.451009,
-        "end": 101.701975
+        "start": 96.25100900000001,
+        "end": 101.30197500000003,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-llpognclc5g",
         "track-name": "2-22 The World Was Wide Enough",
-        "start": 89.142805,
-        "end": 95.352412
+        "start": 90.54280499999992,
+        "end": 96.05241199999996,
+        "character": [
+          "aaron burr"
+        ]
       }
     ]
   },
@@ -564,8 +731,11 @@
       {
         "id": "region-atu3f62s5tg",
         "track-name": "1-18 Guns and Ships",
-        "start": 80.379794,
-        "end": 82.439689
+        "start": 80.07979400000002,
+        "end": 82.439689,
+        "character": [
+          "washington"
+        ]
       },
       {
         "id": "region-ni93ldn54n4",
@@ -576,8 +746,11 @@
       {
         "id": "region-s9qvjqapoqk",
         "track-name": "1-01 Alexander Hamilton",
-        "start": 79.500701,
-        "end": 85.844649
+        "start": 79.00070100000003,
+        "end": 85.74464900000001,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-o8m52s42918",
@@ -600,8 +773,12 @@
       {
         "id": "region-7ab4rtm2lis",
         "track-name": "1-23 Non-Stop",
-        "start": 373.488478,
-        "end": 375.488196
+        "start": 374.28847800000017,
+        "end": 376.48819600000024,
+        "character": [
+          "hamilton",
+          "ensemble"
+        ]
       }
     ]
   },
@@ -612,14 +789,20 @@
       {
         "id": "region-h17rnabln4o",
         "track-name": "1-19 History Has Its Eyes On You",
-        "start": 54.517972139030604,
-        "end": 65.342678
+        "start": 53.1179721390306,
+        "end": 65.342678,
+        "character": [
+          "washington"
+        ]
       },
       {
         "id": "region-tu5n4r8ptig",
         "track-name": "2-23 Who Lives, Who Dies, Who Tells Your Story",
         "start": 4.406835,
-        "end": 17.288397
+        "end": 17.288397,
+        "character": [
+          "washington"
+        ]
       },
       {
         "id": "region-fcb8auk85nc",
@@ -666,14 +849,20 @@
       {
         "id": "region-usves8ia6uc",
         "track-name": "2-03 Take a Break",
-        "start": 190.10037,
-        "end": 191.419464
+        "start": 190.80036999999996,
+        "end": 192.01946400000003,
+        "character": [
+          "eliza"
+        ]
       },
       {
         "id": "region-v6rn5q7dpv4",
         "track-name": "1-05 The Schuyler Sisters",
-        "start": 21.745038,
-        "end": 23.127059
+        "start": 21.945038000000004,
+        "end": 23.127059,
+        "character": [
+          "angelica"
+        ]
       },
       {
         "id": "region-4o7jupf8kno",
@@ -684,14 +873,20 @@
       {
         "id": "region-7g39ogb68qg",
         "track-name": "2-14 The Reynolds Pamphlet",
-        "start": 56.966477,
-        "end": 58.430695
+        "start": 57.566477000000006,
+        "end": 58.630695,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-qlb6074e5ns",
         "track-name": "2-23 Who Lives, Who Dies, Who Tells Your Story",
-        "start": 89.546124,
-        "end": 91.384532
+        "start": 89.04612399999998,
+        "end": 90.88453200000002,
+        "character": [
+          "eliza"
+        ]
       }
     ]
   },
@@ -702,14 +897,20 @@
       {
         "id": "region-k4009a0esoo",
         "track-name": "2-03 Take a Break",
-        "start": 192.159392,
-        "end": 193.869172
+        "start": 191.859392,
+        "end": 193.869172,
+        "character": [
+          "angelica"
+        ]
       },
       {
         "id": "region-jh1ocqoprco",
         "track-name": "1-05 The Schuyler Sisters",
-        "start": 23.836585,
-        "end": 25.174347
+        "start": 24.436584999999994,
+        "end": 25.774346999999995,
+        "character": [
+          "eliza"
+        ]
       },
       {
         "id": "region-606uqgalhb8",
@@ -720,8 +921,11 @@
       {
         "id": "region-3mdu3fvib1o",
         "track-name": "2-23 Who Lives, Who Dies, Who Tells Your Story",
-        "start": 61.659479,
-        "end": 63.903534
+        "start": 61.959479,
+        "end": 63.903534,
+        "character": [
+          "ensemble"
+        ]
       },
       {
         "id": "region-eko040ai7e8",
@@ -738,8 +942,11 @@
       {
         "id": "region-q1qo3q94qas",
         "track-name": "2-03 Take a Break",
-        "start": 194.993283,
-        "end": 197.530602
+        "start": 194.893283,
+        "end": 197.530602,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-267fvidef4g",
@@ -751,7 +958,10 @@
         "id": "region-a4are7t1adg",
         "track-name": "1-05 The Schuyler Sisters",
         "start": 26.608577,
-        "end": 28.559286
+        "end": 27.95928599999999,
+        "character": [
+          "ensemble"
+        ]
       }
     ]
   },
@@ -762,14 +972,20 @@
       {
         "id": "region-rlo2d2o8frg",
         "track-name": "2-20 Your Obedient Servant",
-        "start": 17.723345,
-        "end": 32.126753
+        "start": 17.923345,
+        "end": 32.126753,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-hto64s9gntk",
         "track-name": "2-05 The Room Where It Happens",
         "start": 71.851508,
-        "end": 83.10417
+        "end": 83.10417,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-4ap9vet2qag",
@@ -798,14 +1014,20 @@
       {
         "id": "region-t5s46dke2ek",
         "track-name": "2-05 The Room Where It Happens",
-        "start": 230.876988,
-        "end": 233.072788
+        "start": 230.27698800000005,
+        "end": 233.072788,
+        "character": [
+          "ensemble"
+        ]
       },
       {
         "id": "region-sf4iokj978o",
         "track-name": "1-13 Wait For It",
-        "start": 45.336071,
-        "end": 50.747052
+        "start": 45.03607099999999,
+        "end": 50.747052,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-ettfgkq6rps",
@@ -828,14 +1050,20 @@
       {
         "id": "region-0nj9alg03m",
         "track-name": "1-23 Non-Stop",
-        "start": 192.790949,
-        "end": 195.02782
+        "start": 192.79094899999996,
+        "end": 194.72781999999995,
+        "character": [
+          "ensemble"
+        ]
       },
       {
         "id": "region-efagv62ata4",
         "track-name": "2-22 The World Was Wide Enough",
-        "start": 258.18315,
-        "end": 265.398153
+        "start": 258.78315000000015,
+        "end": 265.398153,
+        "character": [
+          "aaron burr"
+        ]
       }
     ]
   },
@@ -846,14 +1074,20 @@
       {
         "id": "region-r9i0e69c5ns",
         "track-name": "2-14 The Reynolds Pamphlet",
-        "start": 67.810645,
-        "end": 81.4011
+        "start": 67.91064499999999,
+        "end": 81.4011,
+        "character": [
+          "angelica"
+        ]
       },
       {
         "id": "region-6vo1d9t916s",
         "track-name": "1-11 Satisfied",
-        "start": 228.432714,
-        "end": 243.649904
+        "start": 228.23271400000002,
+        "end": 243.649904,
+        "character": [
+          "angelica"
+        ]
       }
     ]
   },
@@ -865,13 +1099,19 @@
         "id": "region-uc39o5tgd6g",
         "track-name": "2-18 It's Quiet Uptown",
         "start": 132.972872,
-        "end": 162.703035
+        "end": 162.703035,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-8jkf6r3es4c",
         "track-name": "1-17 That Would Be Enough",
-        "start": 91.189837,
-        "end": 118.788456
+        "start": 91.58983699999997,
+        "end": 118.788456,
+        "character": [
+          "eliza"
+        ]
       }
     ]
   },
@@ -883,13 +1123,19 @@
         "id": "region-qvmdgs1rt2k",
         "track-name": "2-19 The Election Of 1800",
         "start": 7.647128,
-        "end": 21.920334
+        "end": 21.920334,
+        "character": [
+          "jefferson"
+        ]
       },
       {
         "id": "region-7qo60jq6034",
         "track-name": "2-08 Washington On Your Side",
-        "start": 22.25272,
-        "end": 36.66088
+        "start": 22.452720000000003,
+        "end": 36.66088,
+        "character": [
+          "jefferson"
+        ]
       }
     ]
   },
@@ -900,8 +1146,12 @@
       {
         "id": "region-4iha9k79qvc",
         "track-name": "2-19 The Election Of 1800",
-        "start": 49.841709,
-        "end": 64.28006
+        "start": 51.04170900000002,
+        "end": 65.28005999999995,
+        "character": [
+          "jefferson",
+          "madison"
+        ]
       },
       {
         "id": "region-73msqahdj4o",
@@ -919,7 +1169,10 @@
         "id": "region-4f1qatqtr6k",
         "track-name": "2-08 Washington On Your Side",
         "start": 8.041222,
-        "end": 22.454751
+        "end": 22.454751,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-091q39dtc6s",
@@ -949,7 +1202,10 @@
         "id": "region-tgiao7aamj4",
         "track-name": "2-19 The Election Of 1800",
         "start": 98.86506,
-        "end": 101.104136
+        "end": 101.104136,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-cojab6i4sis",
@@ -961,7 +1217,10 @@
         "id": "region-kelgk1ad374",
         "track-name": "2-18 It's Quiet Uptown",
         "start": 45.45143,
-        "end": 48.227976
+        "end": 48.227976,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-ucbs976ddmg",
@@ -990,26 +1249,44 @@
       {
         "id": "region-m3ums2icatk",
         "track-name": "2-19 The Election Of 1800",
-        "start": 121.456312,
-        "end": 134.077989
+        "start": 121.95631199999997,
+        "end": 134.077989,
+        "character": [
+          "aaron burr",
+          "hamilton"
+        ]
       },
       {
         "id": "region-ou0jafgakug",
         "track-name": "1-02 Aaron Burr, Sir",
         "start": 13.921711,
-        "end": 23.708555
+        "end": 23.708555,
+        "character": [
+          "aaron burr",
+          "hamilton"
+        ]
       },
       {
         "id": "region-ij0omtjj9g",
         "track-name": "1-12 The Story of Tonight (Reprise)",
         "start": 43.851122,
-        "end": 55.934482
+        "end": 55.934482,
+        "character": [
+          "aaron burr",
+          "hamilton",
+          "lafayette",
+          "hercules mulligan"
+        ]
       },
       {
         "id": "region-977arla2q18",
         "track-name": "1-23 Non-Stop",
         "start": 126.008451,
-        "end": 136.803783
+        "end": 136.803783,
+        "character": [
+          "aaron burr",
+          "hamilton"
+        ]
       }
     ]
   },
@@ -1020,14 +1297,20 @@
       {
         "id": "region-fl8ci1m9rds",
         "track-name": "2-21 Best of Wives and Best of Women",
-        "start": 19.978246,
-        "end": 23.66256
+        "start": 20.378246000000004,
+        "end": 23.66256,
+        "character": [
+          "eliza"
+        ]
       },
       {
         "id": "region-bqe1fs4im9s",
         "track-name": "1-23 Non-Stop",
         "start": 42.081457,
-        "end": 52.407035
+        "end": 52.407035,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-oninin4p7mg",
@@ -1068,8 +1351,11 @@
       {
         "id": "region-5lfrot57ac",
         "track-name": "2-23 Who Lives, Who Dies, Who Tells Your Story",
-        "start": 85.970287,
-        "end": 88.896508
+        "start": 85.77028700000001,
+        "end": 88.59650800000001,
+        "character": [
+          "eliza"
+        ]
       }
     ]
   },
@@ -1080,14 +1366,20 @@
       {
         "id": "region-85k9slpug0c",
         "track-name": "1-23 Non-Stop",
-        "start": 369.222433,
-        "end": 373.546619
+        "start": 370.9224330000004,
+        "end": 375.04661900000013,
+        "character": [
+          "ensemble"
+        ]
       },
       {
         "id": "region-62vo3v4h4og",
         "track-name": "1-01 Alexander Hamilton",
         "start": 89.561632,
-        "end": 94.221933
+        "end": 94.221933,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-jk4cm51poio",
@@ -1105,13 +1397,24 @@
         "id": "region-i5lf2iuub0g",
         "track-name": "1-15 Ten Duel Commandments",
         "start": 6.743263,
-        "end": 77.31909978016799
+        "end": 77.31909978016799,
+        "character": [
+          "aaron burr",
+          "hamilton",
+          "john laurens",
+          "ensemble",
+          "charles lee"
+        ]
       },
       {
         "id": "region-6tkfvg060eg",
         "track-name": "2-22 The World Was Wide Enough",
-        "start": 7.474874,
-        "end": 71.27520774584065
+        "start": 6.474874000000003,
+        "end": 71.27520774584065,
+        "character": [
+          "aaron burr",
+          "ensemble"
+        ]
       }
     ]
   },
@@ -1122,8 +1425,11 @@
       {
         "id": "region-83p8el4l554",
         "track-name": "2-22 The World Was Wide Enough",
-        "start": 169.407452,
-        "end": 171.786362
+        "start": 169.20745200000002,
+        "end": 171.586362,
+        "character": [
+          "hamilton"
+        ]
       },
       {
         "id": "region-l8dgjjhm99o",
@@ -1140,8 +1446,11 @@
       {
         "id": "region-e37jjhv0vf",
         "track-name": "2-09 One Last Time",
-        "start": 59.666827,
-        "end": 63.959138
+        "start": 59.766827,
+        "end": 63.959138,
+        "character": [
+          "washington"
+        ]
       },
       {
         "id": "region-fb98t8e3fmc",
@@ -1159,7 +1468,10 @@
         "id": "region-9me5rf0kbrs",
         "track-name": "2-22 The World Was Wide Enough",
         "start": 239.788038,
-        "end": 253.197845
+        "end": 253.197845,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-ld6e9kb05bc",
@@ -1170,8 +1482,11 @@
       {
         "id": "region-b03i701iu5",
         "track-name": "1-13 Wait For It",
-        "start": 30.309282,
-        "end": 40.712391
+        "start": 30.709282000000005,
+        "end": 41.212391000000004,
+        "character": [
+          "aaron burr"
+        ]
       },
       {
         "id": "region-or6v5kuktu4",

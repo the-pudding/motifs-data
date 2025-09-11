@@ -6,7 +6,7 @@ import getMP3Duration from "get-mp3-duration";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const musicalId = "hamilton";
+const musicalId = "wicked";
 
 const audioDir = path.join(
 	__dirname,
